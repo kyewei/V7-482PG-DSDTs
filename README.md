@@ -17,4 +17,4 @@ More people when they come to mind...
 
 + PHPdev32
 
-+ Mieze:
++ Mieze
