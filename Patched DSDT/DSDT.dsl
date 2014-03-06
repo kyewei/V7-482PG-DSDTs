@@ -18477,27 +18477,38 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
             Ones, 
             0x2C
         })
-        Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+        
+        Method (_DSM, 4, NotSerialized)
         {
-            Store (And (Arg2, 0xFF), Local0)
-            If (LEqual (Arg0, Buffer (0x10)
-                    {
-                        /* 0000 */   0xF8, 0xD8, 0x86, 0xA4, 0xDA, 0x0B, 0x1B, 0x47,
-                        /* 0008 */   0xA7, 0x2B, 0x60, 0x42, 0xA6, 0xB5, 0xBE, 0xE0
-                    }))
+            If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+            Return (Package()
             {
-                Return (\_SB.PCI0.RP05.PEGP.NVOP (Arg0, Arg1, Arg2, Arg3))
-            }
-
-            If (LEqual (Arg0, Buffer (0x10)
-                    {
-                        /* 0000 */   0xA0, 0xA0, 0x95, 0x9D, 0x60, 0x00, 0x48, 0x4D,
-                        /* 0008 */   0xB3, 0x4D, 0x7E, 0x5F, 0xEA, 0x12, 0x9F, 0xD4
-                    }))
-            {
-                Return (0x80000002)
-            }
+                "AAPL,ig-platform-id", Buffer() { 0x02, 0x00, 0x16, 0x04 },
+                "hda-gfx", Buffer() { "onboard-1" },
+            })
         }
+        
+        //Method (_DSM, 4, Serialized)  
+        //{
+        //    Store (And (Arg2, 0xFF), Local0)
+        //    If (LEqual (Arg0, Buffer (0x10)
+        //            {
+        //                /* 0000 */   0xF8, 0xD8, 0x86, 0xA4, 0xDA, 0x0B, 0x1B, 0x47,
+        //                /* 0008 */   0xA7, 0x2B, 0x60, 0x42, 0xA6, 0xB5, 0xBE, 0xE0
+        //            }))
+        //    {
+        //        Return (\_SB.PCI0.RP05.PEGP.NVOP (Arg0, Arg1, Arg2, Arg3))
+        //    }
+        //
+        //    If (LEqual (Arg0, Buffer (0x10)
+        //            {
+        //                /* 0000 */   0xA0, 0xA0, 0x95, 0x9D, 0x60, 0x00, 0x48, 0x4D,
+        //                /* 0008 */   0xB3, 0x4D, 0x7E, 0x5F, 0xEA, 0x12, 0x9F, 0xD4
+        //            }))
+        //    {
+        //        Return (0x80000002)
+        //    }
+        //}
     }
 
     Name (BDFR, 0x000F804C)
