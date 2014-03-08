@@ -1,0 +1,33 @@
+#By Ramalama  
+
+#me- changed onboard-1 to current name onboard-2
+
+# Note: Change your layout ID if you need something different
+
+# rename B0D3 -> HDAU
+into_all all code_regex B0D3\. replaceall_matched begin HDAU. end;
+into_all all code_regex \.B0D3 replaceall_matched begin .HDAU end;
+into_all all code_regex \sB0D3, replaceall_matched begin HDAU, end;
+into_all all code_regex \(B0D3 replaceall_matched begin (HDAU end;
+into_all all label B0D3 set_label begin HDAU end;
+into_all all label _SB.PCI0.B0D3 set_label begin _SB.PCI0.HDAU end;
+into_all all label \_SB.PCI0.B0D3 set_label begin \_SB.PCI0.HDAU end;
+into_all all label ^^B0D3 set_label begin ^^HDAU end;
+into_all all label ^B0D3 set_label begin ^HDAU end;
+
+into method label _DSM parent_label HDAU remove_entry;
+into device label HDAU insert
+begin
+Method (_DSM, 4, NotSerialized)\n
+{\n
+    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
+    Return (Package()\n
+    {\n
+        "layout-id", Buffer() { 0x01, 0x00, 0x00, 0x00 },\n
+        "hda-gfx", Buffer() { "onboard-2” },\n
+        "PinConfigurations", Buffer() { },\n
+    })\n
+}\n
+end;
+
+
