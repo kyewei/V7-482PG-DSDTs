@@ -51,28 +51,28 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
     //External (_SB_.IAOE.RCTM, FieldUnitObj)
     //External (_SB_.IAOE.WKRS, FieldUnitObj)
     External (_SB_.IFFS.FFSS)
-    //External (_SB_.PCI0.B0D3.ABAR, FieldUnitObj)
-    External (_SB_.PCI0.B0D3.BARA, IntObj)
-    External (_SB_.PCI0.GFX0.AINT, MethodObj)    // 2 Arguments
-    //External (_SB_.PCI0.GFX0.BLM0, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.BLM1, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.BLM2, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.BLM3, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.BLM4, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.BLM5, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.BLM6, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.BLM7, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.BLM8, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.BLM9, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.BLMX, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CLID, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.DD1F)
-    External (_SB_.PCI0.GFX0.GHDS, MethodObj)    // 1 Arguments
-    External (_SB_.PCI0.GFX0.GSCI, MethodObj)    // 0 Arguments
-    //External (_SB_.PCI0.GFX0.GSSE, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.IUEH, MethodObj)    // 1 Arguments
-    //External (_SB_.PCI0.GFX0.STAT, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.TCHE, FieldUnitObj)
+    //External (_SB_.PCI0.HDAU.ABAR, FieldUnitObj)
+    External (_SB_.PCI0.HDAU.BARA, IntObj)
+    External (_SB_.PCI0.IGPU.AINT, MethodObj)    // 2 Arguments
+    //External (_SB_.PCI0.IGPU.BLM0, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.BLM1, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.BLM2, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.BLM3, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.BLM4, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.BLM5, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.BLM6, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.BLM7, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.BLM8, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.BLM9, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.BLMX, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CLID, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.DD1F)
+    External (_SB_.PCI0.IGPU.GHDS, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.IGPU.GSCI, MethodObj)    // 0 Arguments
+    //External (_SB_.PCI0.IGPU.GSSE, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.IUEH, MethodObj)    // 1 Arguments
+    //External (_SB_.PCI0.IGPU.STAT, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.TCHE, FieldUnitObj)
     //External (_SB_.PCI0.RP05.LNKD, FieldUnitObj)
     External (_SB_.PCI0.RP05.PEGP.DD01)
     External (AR08, IntObj)
@@ -126,43 +126,43 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
     External (_PR_.CPU6, ProcessorObj)
     External (_PR_.CPU7, ProcessorObj)
     //External (_SB_.PCI0, DeviceObj)
-    //External (_SB_.PCI0.GFX0, DeviceObj)
-    //External (_SB_.PCI0.GFX0.CADL, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CAL2, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CAL3, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CAL4, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CAL5, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CAL6, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CAL7, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CAL8, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CPDL, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CPL2, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CPL3, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CPL4, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CPL5, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CPL6, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CPL7, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.CPL8, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.DD01._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD01._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD02._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD02._BCL, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD02._BCM, MethodObj)    // 1 Arguments
-    External (_SB_.PCI0.GFX0.DD02._BQC, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD02._DCS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD02._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD03._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD03._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD04._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD04._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD05._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD05._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD06._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD06._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD07._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD07._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD08._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD08._DGS, MethodObj)    // 0 Arguments
+    //External (_SB_.PCI0.IGPU, DeviceObj)
+    //External (_SB_.PCI0.IGPU.CADL, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CAL2, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CAL3, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CAL4, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CAL5, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CAL6, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CAL7, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CAL8, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CPDL, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CPL2, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CPL3, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CPL4, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CPL5, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CPL6, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CPL7, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.CPL8, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.DD01._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD01._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD02._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD02._BCL, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD02._BCM, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.IGPU.DD02._BQC, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD02._DCS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD02._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD03._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD03._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD04._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD04._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD05._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD05._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD06._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD06._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD07._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD07._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD08._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD08._DGS, MethodObj)    // 0 Arguments
     //External (_SB_.PCI0.LPCB.EC0_.GPSW, FieldUnitObj)
     External (_SB_.PCI0.LPCB.EC0_.SCTB, MethodObj)    // 0 Arguments
     //External (_SB_.PCI0.LPCB.EC0_.VGAF, FieldUnitObj)
@@ -183,11 +183,11 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
     //start from iaoe ssdt-4
     
     //External (_SB_.IFFS.FFSS)
-    //External (_SB_.PCI0.GFX0.ASLC, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.ASLE, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.PARD, MethodObj)    // 0 Arguments
-    //External (_SB_.PCI0.GFX0.STAT, FieldUnitObj)
-    //External (_SB_.PCI0.GFX0.TCHE, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.ASLC, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.ASLE, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.PARD, MethodObj)    // 0 Arguments
+    //External (_SB_.PCI0.IGPU.STAT, FieldUnitObj)
+    //External (_SB_.PCI0.IGPU.TCHE, FieldUnitObj)
     //External (_SB_.PCI0.LPCB.EC0_.AWT0, FieldUnitObj)
     //External (_SB_.PCI0.LPCB.EC0_.AWT1, FieldUnitObj)
     //External (_SB_.PCI0.LPCB.EC0_.AWT2, FieldUnitObj)
@@ -3306,12 +3306,12 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                             If (LIDT)
                             {
                                 Store (Zero, LIDS)
-                                Store (Zero, ^^^GFX0.CLID)
+                                Store (Zero, ^^^IGPU.CLID)
                             }
                             Else
                             {
                                 Store (One, LIDS)
-                                Store (One, ^^^GFX0.CLID)
+                                Store (One, ^^^IGPU.CLID)
                             }
                         }
                     }
@@ -3887,7 +3887,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                         {
                             If (LOr (LEqual (SGST, 0x04), LEqual (SGST, Zero)))
                             {
-                                Notify (^^^GFX0.DD1F, 0x86)
+                                Notify (^^^IGPU.DD1F, 0x86)
                             }
                             Else
                             {
@@ -3916,7 +3916,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                         {
                             If (LOr (LEqual (SGST, 0x04), LEqual (SGST, Zero)))
                             {
-                                Notify (^^^GFX0.DD1F, 0x87)
+                                Notify (^^^IGPU.DD1F, 0x87)
                             }
                             Else
                             {
@@ -4103,7 +4103,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
                     Method (HKDS, 0, NotSerialized)
                     {
-                        ^^^GFX0.GHDS (Zero)
+                        ^^^IGPU.GHDS (Zero)
                     }
 
                     Method (BRXP, 0, NotSerialized)
@@ -4112,7 +4112,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                         {
                             Multiply (DerefOf (Index (PNLT, BLVL)), 0x64, Local1)
                             Divide (Local1, 0x0100, , Local2)
-                            ^^^GFX0.AINT (One, Local2)
+                            ^^^IGPU.AINT (One, Local2)
                         }
                         Else
                         {
@@ -6950,28 +6950,28 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
             }
         }
 
-        If (LAnd (LNotEqual (And (\_SB.PCI0.B0D3.ABAR, 0xFFFFC004), 0xFFFFC004), 
-            LNotEqual (And (\_SB.PCI0.B0D3.ABAR, 0xFFFFC000), Zero)))
+        If (LAnd (LNotEqual (And (\_SB.PCI0.HDAU.ABAR, 0xFFFFC004), 0xFFFFC004), 
+            LNotEqual (And (\_SB.PCI0.HDAU.ABAR, 0xFFFFC000), Zero)))
         {
-            Store (\_SB.PCI0.B0D3.ABAR, \_SB.PCI0.B0D3.BARA)
+            Store (\_SB.PCI0.HDAU.ABAR, \_SB.PCI0.HDAU.BARA)
         }
 
         If (LEqual (\_SB.WFVD, One))
         {
             If (And (ICNF, 0x10))
             {
-                If (And (\_SB.PCI0.GFX0.TCHE, 0x0100))
+                If (And (\_SB.PCI0.IGPU.TCHE, 0x0100))
                 {
                     If (LEqual (\_SB.IAOE.ITMR, One))
                     {
                         If (LAnd (And (\_SB.IAOE.IBT1, One), LOr (And (\_SB.IAOE.WKRS, 0x02
                             ), And (\_SB.IAOE.WKRS, 0x10))))
                         {
-                            Store (Or (And (\_SB.PCI0.GFX0.STAT, 0xFFFFFFFC), One), \_SB.PCI0.GFX0.STAT)
+                            Store (Or (And (\_SB.PCI0.IGPU.STAT, 0xFFFFFFFC), One), \_SB.PCI0.IGPU.STAT)
                         }
                         Else
                         {
-                            Store (And (\_SB.PCI0.GFX0.STAT, 0xFFFFFFFC), \_SB.PCI0.GFX0.STAT)
+                            Store (And (\_SB.PCI0.IGPU.STAT, 0xFFFFFFFC), \_SB.PCI0.IGPU.STAT)
                         }
                     }
                     Else
@@ -6981,11 +6981,11 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                             If (LAnd (And (\_SB.PCI0.LPCB.EC0.ECRD (RefOf (\_SB.PCI0.LPCB.EC0.IBT1)), One), LOr (And (
                                 \_SB.IAOE.WKRS, 0x02), And (\_SB.IAOE.WKRS, 0x10))))
                             {
-                                Store (Or (And (\_SB.PCI0.GFX0.STAT, 0xFFFFFFFC), One), \_SB.PCI0.GFX0.STAT)
+                                Store (Or (And (\_SB.PCI0.IGPU.STAT, 0xFFFFFFFC), One), \_SB.PCI0.IGPU.STAT)
                             }
                             Else
                             {
-                                Store (And (\_SB.PCI0.GFX0.STAT, 0xFFFFFFFC), \_SB.PCI0.GFX0.STAT)
+                                Store (And (\_SB.PCI0.IGPU.STAT, 0xFFFFFFFC), \_SB.PCI0.IGPU.STAT)
                             }
                         }
                     }
@@ -7049,12 +7049,12 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
             If (And (GBSX, 0x40))
             {
-                \_SB.PCI0.GFX0.IUEH (0x06)
+                \_SB.PCI0.IGPU.IUEH (0x06)
             }
 
             If (And (GBSX, 0x80))
             {
-                \_SB.PCI0.GFX0.IUEH (0x07)
+                \_SB.PCI0.IGPU.IUEH (0x07)
             }
 
             If (LAnd (DTSE, LGreater (TCNT, One)))
@@ -7749,7 +7749,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                 0x02, 
                 Package (0x01)
                 {
-                    "\\_SB.PCI0.GFX0"
+                    "\\_SB.PCI0.IGPU"
                 }, 
 
                 Package (0x01)
@@ -7761,7 +7761,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
             {
                 Package (0x02)
                 {
-                    "\\_SB.PCI0.GFX0", 
+                    "\\_SB.PCI0.IGPU", 
                     Ones
                 }, 
 
@@ -7871,7 +7871,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
                 Package (0x03)
                 {
-                    "\\_SB.PCI0.GFX0", 
+                    "\\_SB.PCI0.IGPU", 
                     One, 
                     Package (0x02)
                     {
@@ -8055,7 +8055,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
                 Package (0x03)
                 {
-                    "HDAUDIO\\FUNC_01&VEN_10EC&DEV_0282*", 
+                    "HDAUDIO\\FUNC_01&VEN_10EC&DEV_0282&SUBSYS_00000000&REV_1000", 
                     One, 
                     Package (0x03)
                     {
@@ -8290,7 +8290,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                                         One, 
                                         Package (0x01)
                                         {
-                                            "\\_SB.PCI0.GFX0"
+                                            "\\_SB.PCI0.IGPU"
                                         }
                                     })
                                 }
@@ -9024,9 +9024,9 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
         Method (_L66, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
-            If (LAnd (\_SB.PCI0.GFX0.GSSE, LNot (GSMI)))
+            If (LAnd (\_SB.PCI0.IGPU.GSSE, LNot (GSMI)))
             {
-                \_SB.PCI0.GFX0.GSCI ()
+                \_SB.PCI0.IGPU.GSCI ()
             }
         }
 
@@ -11120,34 +11120,24 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                 PMES,   1
             }
             
-            Method (_DSM, 4, NotSerialized) //new
-            {
-                Store (Package (0x0c)
-                    {
-                        "built-in", 
-                        Buffer (One)
-                        {
-                            0x00
-                        },
-                        "layout-id", 
-                        Buffer (0x04)
-                        {
-                            0x01, 0x00, 0x00, 0x00
-                        },
-                        "PinConfigurations", 
-                        Buffer (0x00)
-                        {
-                            0x00
-                        }
-                    }, Local0)
-                DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
-                Return (Local0)
-           }
+            
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
                 Return (GPRW (0x6D, 0x04))
             }
+            Method (_DSM, 4, NotSerialized)
+            {
+                If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                Return (Package()
+                {
+                    "layout-id", Buffer() { 0x01, 0x00, 0x00, 0x00 },
+                    "hda-gfx", Buffer() { "onboard-1" },
+                    "PinConfigurations", Buffer() { },
+                    //"MaximumBootBeepVolume", 77,
+                })
+            }
+            
         }
 
         Device (RP01)
@@ -14440,22 +14430,22 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
             
             Method (_BCL, 0, NotSerialized)  // _BCL: Brightness Control Levels
             {
-                Return (^^PCI0.GFX0.DD1F._BCL ())
+                Return (^^PCI0.IGPU.DD1F._BCL ())
             }
 
             Method (_BCM, 1, NotSerialized)  // _BCM: Brightness Control Method
             {
-                ^^PCI0.GFX0.DD1F._BCM (Arg0)
+                ^^PCI0.IGPU.DD1F._BCM (Arg0)
             }
 
             Method (_BQC, 0, NotSerialized)  // _BQC: Brightness Query Current
             {
-                Return (^^PCI0.GFX0.DD1F._BQC ())
+                Return (^^PCI0.IGPU.DD1F._BQC ())
             }
 
             Method (_DOS, 1, NotSerialized)  // _DOS: Disable Output Switching
             {
-                ^^PCI0.GFX0._DOS (Arg0)
+                ^^PCI0.IGPU._DOS (Arg0)
             }
         }
         
@@ -14912,17 +14902,17 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
             Store (^LPCB.EC0.BCL7, Index (PNLT, 0x07))
             Store (^LPCB.EC0.BCL8, Index (PNLT, 0x08))
             Store (^LPCB.EC0.BCL9, Index (PNLT, 0x09))
-            Store (Or (^LPCB.EC0.BCL0, 0x8A00), ^GFX0.BLM0)
-            Store (Or (^LPCB.EC0.BCL1, 0x9400), ^GFX0.BLM1)
-            Store (Or (^LPCB.EC0.BCL2, 0x9E00), ^GFX0.BLM2)
-            Store (Or (^LPCB.EC0.BCL3, 0xA800), ^GFX0.BLM3)
-            Store (Or (^LPCB.EC0.BCL4, 0xB200), ^GFX0.BLM4)
-            Store (Or (^LPCB.EC0.BCL5, 0xBC00), ^GFX0.BLM5)
-            Store (Or (^LPCB.EC0.BCL6, 0xC600), ^GFX0.BLM6)
-            Store (Or (^LPCB.EC0.BCL7, 0xD000), ^GFX0.BLM7)
-            Store (Or (^LPCB.EC0.BCL8, 0xDA00), ^GFX0.BLM8)
-            Store (Or (^LPCB.EC0.BCL9, 0xE400), ^GFX0.BLM9)
-            Store (Zero, ^GFX0.BLMX)
+            Store (Or (^LPCB.EC0.BCL0, 0x8A00), ^IGPU.BLM0)
+            Store (Or (^LPCB.EC0.BCL1, 0x9400), ^IGPU.BLM1)
+            Store (Or (^LPCB.EC0.BCL2, 0x9E00), ^IGPU.BLM2)
+            Store (Or (^LPCB.EC0.BCL3, 0xA800), ^IGPU.BLM3)
+            Store (Or (^LPCB.EC0.BCL4, 0xB200), ^IGPU.BLM4)
+            Store (Or (^LPCB.EC0.BCL5, 0xBC00), ^IGPU.BLM5)
+            Store (Or (^LPCB.EC0.BCL6, 0xC600), ^IGPU.BLM6)
+            Store (Or (^LPCB.EC0.BCL7, 0xD000), ^IGPU.BLM7)
+            Store (Or (^LPCB.EC0.BCL8, 0xDA00), ^IGPU.BLM8)
+            Store (Or (^LPCB.EC0.BCL9, 0xE400), ^IGPU.BLM9)
+            Store (Zero, ^IGPU.BLMX)
         }
     }
 
@@ -15114,7 +15104,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
     Scope (\_SB.PCI0)
     {
-        Device (B0D3)
+        Device (HDAU)
         {
             Name (_ADR, 0x00030000)  // _ADR: Address
             Name (BARA, 0x80000000)
@@ -15347,9 +15337,19 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                     }
                 }
             }
+            Method (_DSM, 4, NotSerialized)
+            {
+                If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                Return (Package()
+                {
+                    "layout-id", Buffer() { 0x01, 0x00, 0x00, 0x00 },
+                    "hda-gfx", Buffer() { "onboard-2" },
+                    "PinConfigurations", Buffer() { },
+                })
+            }
         }
 
-        Device (GFX0)
+        Device (IGPU)
         {
             Name (_ADR, 0x00020000)  // _ADR: Address
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
@@ -16826,7 +16826,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                 {
                     If (LAnd (LGreaterEqual (Arg0, Zero), LLessEqual (Arg0, 0x64)))
                     {
-                        \_SB.PCI0.GFX0.AINT (One, Arg0)
+                        \_SB.PCI0.IGPU.AINT (One, Arg0)
                         Store (Arg0, BRTL)
                     }
                 }
@@ -17499,12 +17499,12 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                         If (LEqual (PARM, One))
                         {
                             Or (\_SB.PCI0.AUDE, 0x20, \_SB.PCI0.AUDE)
-                            \_SB.PCI0.B0D3.ARST ()
-                            \_SB.PCI0.B0D3.ABWA (One)
-                            \_SB.PCI0.B0D3.ASTR ()
-                            \_SB.PCI0.B0D3.AINI ()
-                            \_SB.PCI0.B0D3.CXDC ()
-                            \_SB.PCI0.B0D3.ABWA (Zero)
+                            \_SB.PCI0.HDAU.ARST ()
+                            \_SB.PCI0.HDAU.ABWA (One)
+                            \_SB.PCI0.HDAU.ASTR ()
+                            \_SB.PCI0.HDAU.AINI ()
+                            \_SB.PCI0.HDAU.CXDC ()
+                            \_SB.PCI0.HDAU.ABWA (Zero)
                             Notify (\_SB.PCI0, Zero)
                         }
 
@@ -17572,7 +17572,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                     }
                     Else
                     {
-                        Notify (\_SB.PCI0.GFX0, Arg1)
+                        Notify (\_SB.PCI0.IGPU, Arg1)
                     }
                 }
 
@@ -17582,7 +17582,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                 }
                 Else
                 {
-                    Notify (\_SB.PCI0.GFX0, 0x80)
+                    Notify (\_SB.PCI0.IGPU, 0x80)
                 }
 
                 Return (Zero)
@@ -17935,7 +17935,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                         CreateField (Arg2, 0xE0, 0x20, XRG0)
                         If (LNotEqual (Arg1, 0x10))
                         {
-                            Return (\_SB.PCI0.GFX0._DSM (MUID, REVI, SFNC, XRG0))
+                            Return (\_SB.PCI0.IGPU._DSM (MUID, REVI, SFNC, XRG0))
                         }
                     }
                 }
@@ -17946,7 +17946,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                         CreateDWordField (Arg2, 0x08, XRG1)
                         If (LEqual (Arg1, 0x10))
                         {
-                            Return (\_SB.PCI0.GFX0.MXMX (XRG1))
+                            Return (\_SB.PCI0.IGPU.MXMX (XRG1))
                         }
                         Else
                         {
@@ -17960,7 +17960,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                             CreateDWordField (Arg2, 0x08, XRG2)
                             If (LEqual (Arg1, 0x10))
                             {
-                                Return (\_SB.PCI0.GFX0.MXDS (XRG2))
+                                Return (\_SB.PCI0.IGPU.MXDS (XRG2))
                             }
                             Else
                             {
@@ -18186,7 +18186,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD01._ADR ())
+                Return (\_SB.PCI0.IGPU.DD01._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
@@ -18195,7 +18195,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD01._DGS ())
+                Return (\_SB.PCI0.IGPU.DD01._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -18207,17 +18207,17 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD02._ADR ())
+                Return (\_SB.PCI0.IGPU.DD02._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
             {
-                Return (\_SB.PCI0.GFX0.DD02._DCS ())
+                Return (\_SB.PCI0.IGPU.DD02._DCS ())
             }
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD02._DGS ())
+                Return (\_SB.PCI0.IGPU.DD02._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -18226,17 +18226,17 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
             Method (_BCL, 0, NotSerialized)  // _BCL: Brightness Control Levels
             {
-                Return (\_SB.PCI0.GFX0.DD02._BCL ())
+                Return (\_SB.PCI0.IGPU.DD02._BCL ())
             }
 
             Method (_BQC, 0, NotSerialized)  // _BQC: Brightness Query Current
             {
-                Return (\_SB.PCI0.GFX0.DD02._BQC ())
+                Return (\_SB.PCI0.IGPU.DD02._BQC ())
             }
 
             Method (_BCM, 1, NotSerialized)  // _BCM: Brightness Control Method
             {
-                Return (\_SB.PCI0.GFX0.DD02._BCM (Arg0))
+                Return (\_SB.PCI0.IGPU.DD02._BCM (Arg0))
             }
         }
 
@@ -18244,7 +18244,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD03._ADR ())
+                Return (\_SB.PCI0.IGPU.DD03._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
@@ -18253,7 +18253,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD03._DGS ())
+                Return (\_SB.PCI0.IGPU.DD03._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -18265,7 +18265,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD04._ADR ())
+                Return (\_SB.PCI0.IGPU.DD04._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
@@ -18274,7 +18274,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD04._DGS ())
+                Return (\_SB.PCI0.IGPU.DD04._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -18286,7 +18286,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD05._ADR ())
+                Return (\_SB.PCI0.IGPU.DD05._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
@@ -18295,7 +18295,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD05._DGS ())
+                Return (\_SB.PCI0.IGPU.DD05._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -18307,7 +18307,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD06._ADR ())
+                Return (\_SB.PCI0.IGPU.DD06._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
@@ -18316,7 +18316,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD06._DGS ())
+                Return (\_SB.PCI0.IGPU.DD06._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -18328,7 +18328,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD07._ADR ())
+                Return (\_SB.PCI0.IGPU.DD07._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
@@ -18337,7 +18337,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD07._DGS ())
+                Return (\_SB.PCI0.IGPU.DD07._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -18349,7 +18349,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD08._ADR ())
+                Return (\_SB.PCI0.IGPU.DD08._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
@@ -18358,7 +18358,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD08._DGS ())
+                Return (\_SB.PCI0.IGPU.DD08._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -18418,7 +18418,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
         }
     }
 
-    Scope (\_SB.PCI0.GFX0)
+    Scope (\_SB.PCI0.IGPU)
     {
         Method (MXMX, 1, Serialized)
         {
@@ -18769,240 +18769,240 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
         Name (MSTE, Zero)
         Method (VSTS, 0, NotSerialized)
         {
-            If (LNotEqual (\_SB.PCI0.GFX0.CPDL, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CPDL, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CPDL, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CPDL, And (DID1, 0xFFFF)))
                 {
                     Or (GATD, 0x02, GATD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CPDL, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CPDL, And (DID2, 0xFFFF)))
                     {
                         Or (GATD, One, GATD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CPL2, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CPL2, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CPL2, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CPL2, And (DID1, 0xFFFF)))
                 {
                     Or (GATD, 0x02, GATD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CPL2, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CPL2, And (DID2, 0xFFFF)))
                     {
                         Or (GATD, One, GATD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CPL3, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CPL3, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CPL3, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CPL3, And (DID1, 0xFFFF)))
                 {
                     Or (GATD, 0x02, GATD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CPL3, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CPL3, And (DID2, 0xFFFF)))
                     {
                         Or (GATD, One, GATD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CPL4, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CPL4, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CPL4, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CPL4, And (DID1, 0xFFFF)))
                 {
                     Or (GATD, 0x02, GATD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CPL4, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CPL4, And (DID2, 0xFFFF)))
                     {
                         Or (GATD, One, GATD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CPL5, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CPL5, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CPL5, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CPL5, And (DID1, 0xFFFF)))
                 {
                     Or (GATD, 0x02, GATD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CPL5, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CPL5, And (DID2, 0xFFFF)))
                     {
                         Or (GATD, One, GATD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CPL6, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CPL6, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CPL6, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CPL6, And (DID1, 0xFFFF)))
                 {
                     Or (GATD, 0x02, GATD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CPL6, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CPL6, And (DID2, 0xFFFF)))
                     {
                         Or (GATD, One, GATD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CPL7, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CPL7, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CPL7, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CPL7, And (DID1, 0xFFFF)))
                 {
                     Or (GATD, 0x02, GATD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CPL7, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CPL7, And (DID2, 0xFFFF)))
                     {
                         Or (GATD, One, GATD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CPL8, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CPL8, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CPL8, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CPL8, And (DID1, 0xFFFF)))
                 {
                     Or (GATD, 0x02, GATD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CPL8, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CPL8, And (DID2, 0xFFFF)))
                     {
                         Or (GATD, One, GATD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CADL, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CADL, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CADL, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CADL, And (DID1, 0xFFFF)))
                 {
                     Or (GACD, 0x02, GACD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CADL, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CADL, And (DID2, 0xFFFF)))
                     {
                         Or (GACD, One, GACD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CAL2, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CAL2, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CAL2, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CAL2, And (DID1, 0xFFFF)))
                 {
                     Or (GACD, 0x02, GACD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CAL2, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CAL2, And (DID2, 0xFFFF)))
                     {
                         Or (GACD, One, GACD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CAL3, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CAL3, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CAL3, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CAL3, And (DID1, 0xFFFF)))
                 {
                     Or (GACD, 0x02, GACD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CAL3, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CAL3, And (DID2, 0xFFFF)))
                     {
                         Or (GACD, One, GACD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CAL4, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CAL4, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CAL4, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CAL4, And (DID1, 0xFFFF)))
                 {
                     Or (GACD, 0x02, GACD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CAL4, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CAL4, And (DID2, 0xFFFF)))
                     {
                         Or (GACD, One, GACD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CAL5, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CAL5, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CAL5, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CAL5, And (DID1, 0xFFFF)))
                 {
                     Or (GACD, 0x02, GACD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CAL5, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CAL5, And (DID2, 0xFFFF)))
                     {
                         Or (GACD, One, GACD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CAL6, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CAL6, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CAL6, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CAL6, And (DID1, 0xFFFF)))
                 {
                     Or (GACD, 0x02, GACD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CAL6, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CAL6, And (DID2, 0xFFFF)))
                     {
                         Or (GACD, One, GACD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CAL7, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CAL7, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CAL7, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CAL7, And (DID1, 0xFFFF)))
                 {
                     Or (GACD, 0x02, GACD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CAL7, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CAL7, And (DID2, 0xFFFF)))
                     {
                         Or (GACD, One, GACD)
                     }
                 }
             }
 
-            If (LNotEqual (\_SB.PCI0.GFX0.CAL8, Zero))
+            If (LNotEqual (\_SB.PCI0.IGPU.CAL8, Zero))
             {
-                If (LEqual (\_SB.PCI0.GFX0.CAL8, And (DID1, 0xFFFF)))
+                If (LEqual (\_SB.PCI0.IGPU.CAL8, And (DID1, 0xFFFF)))
                 {
                     Or (GACD, 0x02, GACD)
                 }
                 Else
                 {
-                    If (LEqual (\_SB.PCI0.GFX0.CAL8, And (DID2, 0xFFFF)))
+                    If (LEqual (\_SB.PCI0.IGPU.CAL8, And (DID2, 0xFFFF)))
                     {
                         Or (GACD, One, GACD)
                     }
@@ -19733,18 +19733,18 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                     }
                 }
 
-                If (And (\_SB.PCI0.GFX0.TCHE, 0x0100))
+                If (And (\_SB.PCI0.IGPU.TCHE, 0x0100))
                 {
                     If (LEqual (ITMR, One))
                     {
                         If (LAnd (LAnd (And (IBT1, One), And (\_SB.IAOE.WKRS, 0x02
                             )), LNot (And (Arg0, One))))
                         {
-                            If (LNot (\_SB.PCI0.GFX0.PARD ()))
+                            If (LNot (\_SB.PCI0.IGPU.PARD ()))
                             {
-                                Store (And (\_SB.PCI0.GFX0.STAT, 0xFFFFFFFC), \_SB.PCI0.GFX0.STAT)
-                                Store (Or (\_SB.PCI0.GFX0.ASLC, 0x0100), \_SB.PCI0.GFX0.ASLC)
-                                Store (One, \_SB.PCI0.GFX0.ASLE)
+                                Store (And (\_SB.PCI0.IGPU.STAT, 0xFFFFFFFC), \_SB.PCI0.IGPU.STAT)
+                                Store (Or (\_SB.PCI0.IGPU.ASLC, 0x0100), \_SB.PCI0.IGPU.ASLC)
+                                Store (One, \_SB.PCI0.IGPU.ASLE)
                             }
                         }
                     }
@@ -19755,11 +19755,11 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                             If (LAnd (LAnd (And (\_SB.PCI0.LPCB.EC0.IBT1, One), And (\_SB.IAOE.WKRS, 0x02
                                 )), LNot (And (Arg0, One))))
                             {
-                                If (LNot (\_SB.PCI0.GFX0.PARD ()))
+                                If (LNot (\_SB.PCI0.IGPU.PARD ()))
                                 {
-                                    Store (And (\_SB.PCI0.GFX0.STAT, 0xFFFFFFFC), \_SB.PCI0.GFX0.STAT)
-                                    Store (Or (\_SB.PCI0.GFX0.ASLC, 0x0100), \_SB.PCI0.GFX0.ASLC)
-                                    Store (One, \_SB.PCI0.GFX0.ASLE)
+                                    Store (And (\_SB.PCI0.IGPU.STAT, 0xFFFFFFFC), \_SB.PCI0.IGPU.STAT)
+                                    Store (Or (\_SB.PCI0.IGPU.ASLC, 0x0100), \_SB.PCI0.IGPU.ASLC)
+                                    Store (One, \_SB.PCI0.IGPU.ASLE)
                                 }
                             }
                         }
