@@ -7,11 +7,12 @@ What works:
 + Optimus card powered off
 + Ethernet (RTL8111)
 + Backlight brightness
++ Efi boot (partially works, seems to have less battery life though, so using legacy chameleon for now)
++ USB Sleep/Wake (works with GenericUSBXHCI, given up on trying to DSDT patch since that just refuses to work)
 + Everything else other than below
 
 What doesn't work (for now).....: 
 + Wifi (Intel wifi will never work apparently)
 + HDMI
-+ USB Sleep/Wake (working on it)
 + Proper shutdown
-+ Efi boot (working on it)
++ Touchscreen (partially working)

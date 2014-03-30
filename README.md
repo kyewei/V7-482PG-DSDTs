@@ -6,7 +6,7 @@ Me trying to get 10.9 Mavericks to work on my laptop..
 Patched DSDT folder contains the current state of modifications to my DSDT.
 
 
-Thanks to the following people for all their hard work, including their patches, kexts, DSDT edits, etc. Specific sources are in sources.md
+Thanks to the following people for all their hard work, including their patches, kexts, DSDT edits, etc. A specific list of sources and contributions are in sources.md. My specs are in specs.md
 
 More people when they come to mind...
 
@@ -18,3 +18,7 @@ More people when they come to mind...
 + PHPdev32
 
 + Mieze
+
++ Zenith432
+
++ Piker-Alpha

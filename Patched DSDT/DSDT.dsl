@@ -3237,8 +3237,8 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                         }
                     }
 
-                    Mutex (MUT1, 0x00)
-                    Mutex (MUT0, 0x00)
+                    Mutex(MUT1, 0)
+                    Mutex(MUT0, 0)
                     Method (APOL, 1, NotSerialized)
                     {
                         Store (Arg0, DBPL)
@@ -3847,7 +3847,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                     }
 
                     Name (CPUF, Zero)
-                    Mutex (PPCF, 0x00)
+                    Mutex(PPCF, 0)
                     Method (_Q83, 0, NotSerialized)  // _Qxx: EC Query
                     {
                         Notify (\_TZ.TZ01, 0x80)
@@ -4119,7 +4119,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                         }
                     }
 
-                    Mutex (CTBM, 0x00)
+                    Mutex(CTBM, 0)
                     Method (SCTB, 0, NotSerialized)
                     {
                         Acquire (CTBM, 0xFFFF)
@@ -4497,7 +4497,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                             0x0070,             // Range Minimum
                             0x0070,             // Range Maximum
                             0x01,               // Alignment
-                            0x08,               // Length
+                            0x02,               // Length
                             )
                         
                     })
@@ -6728,6 +6728,10 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                     Return (FEBC)
                 }
             }
+            Device (MCHC)
+            {
+                Name (_ADR, Zero)
+            }
         }
     }
 
@@ -6793,7 +6797,8 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
     Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
     {
-        Store (Zero, P80D)
+        If (LNotEqual(Arg0,5)) {
+Store (Zero, P80D)
         P8XH (Zero, Arg0, Zero)
         Store (Arg0, SLPS)
         Store (Zero, GO55)
@@ -6901,6 +6906,8 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                 }
             }
         }
+}
+
     }
 
     Method (MMRP, 0, NotSerialized)
@@ -6915,7 +6922,8 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
     Method (_WAK, 1, Serialized)  // _WAK: Wake
     {
-        \_SB.PCI0.RP05.PEGP._OFF () //added
+        If (LOr(LLess(Arg0,1),LGreater(Arg0,5))) { Store(3,Arg0) }
+\_SB.PCI0.RP05.PEGP._OFF () //added
         
         Store (Zero, P80D)
         If (\_SB.PCI0.LPCB.EC0.LIDT)
@@ -7571,7 +7579,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                     Store (0x07D3, OSYS)
                 }
 
-                If (_OSI ("Windows 2006"))
+                If(LOr(_OSI("Darwin"),_OSI("Windows 2006")))
                 {
                     Store (0x07D6, OSYS)
                 }
@@ -14143,6 +14151,21 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
             {
                 Or (HCON, 0x02, HCON)
                 Or (HSTS, 0xFF, HSTS)
+            }
+            Device (BUS0)
+            {
+                Name (_CID, "smbus")
+                Name (_ADR, Zero)
+                Device (DVL0)
+                {
+                    Name (_ADR, 0x57)
+                    Name (_CID, "diagsvault")
+                    Method (_DSM, 4, NotSerialized)
+                    {
+                        If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                        Return (Package() { "address", 0x57 })
+                    }
+                }
             }
         }
     }

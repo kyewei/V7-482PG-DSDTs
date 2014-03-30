@@ -8,4 +8,4 @@ Go to generate/unix, remove the line that contains “-Woverride-init” inside 
 
 Credits for instructions from: http://sourceforge.net/p/maciasl/wiki/Compiling%20iASL/ and http://www.projectosx.com/forum/index.php?s=&showtopic=386&view=findpost&p=39919
 
-
+I think the 21040325 version compiles, but refuses to generate compile messages in MaciAsl, so stick to 20140214 for now.

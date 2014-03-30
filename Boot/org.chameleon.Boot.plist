@@ -2,29 +2,31 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>DSDT</key>
-	<string>/Extra/DSDT.aml</string>
+	<key>DropSSDT</key>
+	<string>Yes</string>
+	<key>EnableHDMIAudio</key>
+	<string>Yes</string>
+	<key>EthernetBuiltIn</key>
+	<string>Yes</string>
 	<key>Graphics Mode</key>
 	<string>1920x1080x32</string>
 	<key>GraphicsEnabler</key>
 	<string>Yes</string>
-	<key>IntelAzulFB</key>
-	<string>9</string>
+	<key>HDAEnabler</key>
+	<string>Yes</string>
+	<key>HDAULayoutID</key>
+	<string>1</string>
+	<key>HDEFLayoutID</key>
+	<string>1</string>
 	<key>Kernel</key>
 	<string>mach_kernel</string>
 	<key>Kernel Flags</key>
-	<string>dart=0</string>
-	<key>SMBIOS</key>
-	<string>/Extra/SMBios.plist</string>
-	<key>Theme</key>
-	<string>LoginToLion</string>
+	<string>dart=0 -gux_nosleep darkwake=0</string>
 	<key>Timeout</key>
 	<string>5</string>
 	<key>UseKernelCache</key>
 	<string>Yes</string>
-	<key>EthernetBuiltIn</key>
-	<string>Yes</string>
-	<key>DropSSDT</key>
-	<string>Yes</string>
+	<key>Default Partition</key>
+	<string>hd(1,9)</string>
 </dict>
 </plist>
