@@ -1,6 +1,9 @@
 Specs
 ==========
 
+Although a bios update (2.25) introduced newer tables, they also gave my wake from sleep a 20-30 second delay. I'm still trying to figure out what to do with them (perhaps merging useful changes?). 
+
+
 What works:
 + Audio (ALC 282)
 + Integrated Graphics QE/CI (HD 4400)

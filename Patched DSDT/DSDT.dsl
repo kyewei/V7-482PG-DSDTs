@@ -201,47 +201,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
     //External (ICNF, FieldUnitObj)
     
     //end iaoe ssdt-4
-    
-    
-    Method (DTGP, 5, NotSerialized) //added 
-    {
-        If (LEqual (Arg0, Buffer (0x10)
-                {
-                    /* 0000 */   0xC6, 0xB7, 0xB5, 0xA0, 0x18, 0x13, 0x1C, 0x44,
-                    /* 0008 */   0xB0, 0xC9, 0xFE, 0x69, 0x5E, 0xAF, 0x94, 0x9B
-                }))
-        {
-            If (LEqual (Arg1, One))
-            {
-                If (LEqual (Arg2, Zero))
-                {
-                    Store (Buffer (One)
-                        {
-                             0x03
-                        }, Arg4)
-                    Return (One)
-                }
-
-                If (LEqual (Arg2, One))
-                {
-                    Return (One)
-                }
-            }
-        }
-
-        Store (Buffer (One)
-            {
-                 0x00
-            }, Arg4)
-        Return (Zero)
-    }
-    
-    
-    
-    
-    
-    
-    
+        
     
     Name (SS1, Zero)
     Name (SS2, Zero)
@@ -751,6 +711,40 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
         ECON,   8
     }
 
+    Method (DTGP, 5, NotSerialized) //added 
+    {
+        If (LEqual (Arg0, Buffer (0x10)
+                {
+                    /* 0000 */   0xC6, 0xB7, 0xB5, 0xA0, 0x18, 0x13, 0x1C, 0x44,
+                    /* 0008 */   0xB0, 0xC9, 0xFE, 0x69, 0x5E, 0xAF, 0x94, 0x9B
+                }))
+        {
+            If (LEqual (Arg1, One))
+            {
+                If (LEqual (Arg2, Zero))
+                {
+                    Store (Buffer (One)
+                        {
+                             0x03
+                        }, Arg4)
+                    Return (One)
+                }
+
+                If (LEqual (Arg2, One))
+                {
+                    Return (One)
+                }
+            }
+        }
+
+        Store (Buffer (One)
+            {
+                 0x00
+            }, Arg4)
+        Return (Zero)
+    }
+    
+    
     Scope (_SB)
     {
         Name (PRSA, ResourceTemplate ()
@@ -3237,8 +3231,8 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                         }
                     }
 
-                    Mutex(MUT1, 0)
-                    Mutex(MUT0, 0)
+                    Mutex (MUT1, 0x00)
+                    Mutex (MUT0, 0x00)
                     Method (APOL, 1, NotSerialized)
                     {
                         Store (Arg0, DBPL)
@@ -3847,7 +3841,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                     }
 
                     Name (CPUF, Zero)
-                    Mutex(PPCF, 0)
+                    Mutex (PPCF, 0x00)
                     Method (_Q83, 0, NotSerialized)  // _Qxx: EC Query
                     {
                         Notify (\_TZ.TZ01, 0x80)
@@ -4119,7 +4113,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                         }
                     }
 
-                    Mutex(CTBM, 0)
+                    Mutex (CTBM, 0x00)
                     Method (SCTB, 0, NotSerialized)
                     {
                         Acquire (CTBM, 0xFFFF)
@@ -4497,7 +4491,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                             0x0070,             // Range Minimum
                             0x0070,             // Range Maximum
                             0x01,               // Alignment
-                            0x02,               // Length
+                            0x08,               // Length
                             )
                         
                     })
@@ -5098,13 +5092,13 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
                 Method (GOTS, 2, Serialized)
                 {
-                    Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                     Store (Zero, Local0)
                     Store (And (Arg0, 0xFF), Local1)
                     While (One)
                     {
-                        Store (Local1, _T_0)
-                        If (LEqual (_T_0, 0x81))
+                        Store (Local1, T_0)
+                        If (LEqual (T_0, 0x81))
                         {
                             If (LEqual (^^LPCB.EC0.ODST, Zero))
                             {
@@ -5113,7 +5107,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                         }
                         Else
                         {
-                            If (LEqual (_T_0, 0x82))
+                            If (LEqual (T_0, 0x82))
                             {
                                 If (LEqual (^^LPCB.EC0.TOHP, Zero))
                                 {
@@ -5122,7 +5116,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                             }
                             Else
                             {
-                                If (LEqual (_T_0, 0x84))
+                                If (LEqual (T_0, 0x84))
                                 {
                                     If (LEqual (^^LPCB.EC0.KBBL, Zero))
                                     {
@@ -5131,7 +5125,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_0, 0x85))
+                                    If (LEqual (T_0, 0x85))
                                     {
                                         If (LEqual (^^LPCB.EC0.BBST, Zero))
                                         {
@@ -6025,14 +6019,14 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                 })
                 Method (EVBC, 0, Serialized)
                 {
-                    Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                     Store (Zero, Index (FEBC, 0x06))
                     Store (Zero, Index (FEBC, 0x07))
                     Store (DerefOf (Index (FEBC, Zero)), Local0)
                     While (One)
                     {
-                        Store (Local0, _T_0)
-                        If (LEqual (_T_0, One))
+                        Store (Local0, T_0)
+                        If (LEqual (T_0, One))
                         {
                             Store (Zero, Index (FEBC, 0x04))
                             Store (Zero, Index (FEBC, 0x05))
@@ -6106,7 +6100,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                         }
                         Else
                         {
-                            If (LEqual (_T_0, 0x02))
+                            If (LEqual (T_0, 0x02))
                             {
                                 Store (Zero, Index (FEBC, 0x02))
                                 Store (Zero, Index (FEBC, 0x03))
@@ -6115,7 +6109,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                             }
                             Else
                             {
-                                If (LEqual (_T_0, 0x03))
+                                If (LEqual (T_0, 0x03))
                                 {
                                     Store (Zero, Index (FEBC, 0x02))
                                     Store (Zero, Index (FEBC, 0x03))
@@ -6124,7 +6118,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_0, 0x04))
+                                    If (LEqual (T_0, 0x04))
                                     {
                                         Store (Zero, Index (FEBC, 0x03))
                                         Store (Zero, Index (FEBC, 0x04))
@@ -6151,7 +6145,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                                     }
                                     Else
                                     {
-                                        If (LEqual (_T_0, 0x05))
+                                        If (LEqual (T_0, 0x05))
                                         {
                                             Store (DerefOf (Index (FEBC, One)), Local0)
                                             If (LEqual (Local0, One))
@@ -6216,7 +6210,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                                         }
                                         Else
                                         {
-                                            If (LEqual (_T_0, 0x06))
+                                            If (LEqual (T_0, 0x06))
                                             {
                                                 Store (Zero, Local1)
                                                 Store (GTET (RefOf (Local1)), Local2)
@@ -6283,7 +6277,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
                 Method (EVBD, 0, Serialized)
                 {
-                    Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                     Store (Zero, Index (FEBC, 0x02))
                     Store (Zero, Index (FEBC, 0x03))
                     Store (Zero, Index (FEBC, 0x04))
@@ -6293,8 +6287,8 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                     Store (DerefOf (Index (FEBC, Zero)), Local0)
                     While (One)
                     {
-                        Store (Local0, _T_0)
-                        If (LEqual (_T_0, One)) {}
+                        Store (Local0, T_0)
+                        If (LEqual (T_0, One)) {}
                         Else
                         {
                             Store (Zero, Index (FEBC, Zero))
@@ -6728,10 +6722,6 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
                     Return (FEBC)
                 }
             }
-            Device (MCHC)
-            {
-                Name (_ADR, Zero)
-            }
         }
     }
 
@@ -6797,8 +6787,7 @@ DefinitionBlock ("/Users/kye/Desktop/originalaml/DSDT.aml", "DSDT", 1, "ACRSYS",
 
     Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
     {
-        If (LNotEqual(Arg0,5)) {
-Store (Zero, P80D)
+        Store (Zero, P80D)
         P8XH (Zero, Arg0, Zero)
         Store (Arg0, SLPS)
         Store (Zero, GO55)
@@ -6906,8 +6895,6 @@ Store (Zero, P80D)
                 }
             }
         }
-}
-
     }
 
     Method (MMRP, 0, NotSerialized)
@@ -6921,10 +6908,9 @@ Store (Zero, P80D)
     }
 
     Method (_WAK, 1, Serialized)  // _WAK: Wake
-    {
-        If (LOr(LLess(Arg0,1),LGreater(Arg0,5))) { Store(3,Arg0) }
-\_SB.PCI0.RP05.PEGP._OFF () //added
+    {      
         
+        \_SB.PCI0.RP05.PEGP._OFF () //Nvidia OFF
         Store (Zero, P80D)
         If (\_SB.PCI0.LPCB.EC0.LIDT)
         {
@@ -7207,7 +7193,7 @@ Store (Zero, P80D)
             Release (WFDM)
             ADBG (Concatenate ("_WAK=", ToHexString (Timer)))
         }
-        \_SB.PCI0.RP05.PEGP._OFF () //added
+        \_SB.PCI0.RP05.PEGP._OFF () //Nvidia OFF
         Return (Package (0x02)
         {
             Zero, 
@@ -7547,9 +7533,8 @@ Store (Zero, P80D)
         }
 
         Method (_INI, 0, NotSerialized)  // _INI: Initialize
-        {
-            \_SB.PCI0.RP05.PEGP._OFF () //added
-            
+        {            
+            \_SB.PCI0.RP05.PEGP._OFF () //Nvidia OFF
             Store (0x07D0, OSYS)
             If (CondRefOf (\_OSI, Local0))
             {
@@ -7579,7 +7564,7 @@ Store (Zero, P80D)
                     Store (0x07D3, OSYS)
                 }
 
-                If(LOr(_OSI("Darwin"),_OSI("Windows 2006")))
+                If (_OSI ("Windows 2006"))
                 {
                     Store (0x07D6, OSYS)
                 }
@@ -7627,7 +7612,7 @@ Store (Zero, P80D)
                 Store (One, WKFN)
                 Release (WFDM)
             }
-            \_SB.PCI0.RP05.PEGP._OFF () //added
+            \_SB.PCI0.RP05.PEGP._OFF () //Nvidia OFF
         }
 
         Method (NHPG, 0, Serialized)
@@ -8263,7 +8248,7 @@ Store (Zero, P80D)
 
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
             {
-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                 If (LEqual (Arg0, Buffer (0x10)
                         {
                             /* 0000 */   0xE0, 0xBF, 0xFE, 0xB8, 0xF8, 0xBA, 0x4B, 0x45,
@@ -8290,8 +8275,8 @@ Store (Zero, P80D)
                         {
                             While (One)
                             {
-                                Store (PEPY, _T_0)
-                                If (LEqual (_T_0, One))
+                                Store (PEPY, T_0)
+                                If (LEqual (T_0, One))
                                 {
                                     Return (Package (0x02)
                                     {
@@ -8304,7 +8289,7 @@ Store (Zero, P80D)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_0, 0x02))
+                                    If (LEqual (T_0, 0x02))
                                     {
                                         Return (Package (0x02)
                                         {
@@ -8317,7 +8302,7 @@ Store (Zero, P80D)
                                     }
                                     Else
                                     {
-                                        If (LEqual (_T_0, 0x03))
+                                        If (LEqual (T_0, 0x03))
                                         {
                                             Return (DEVS)
                                         }
@@ -9749,98 +9734,98 @@ Store (Zero, P80D)
 
             Method (PR2S, 1, Serialized)
             {
-                Name (_T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                 If (LEqual (And (CDID, 0xF000), 0x8000))
                 {
                     While (One)
                     {
-                        Store (Arg0, _T_0)
-                        If (LEqual (_T_0, One))
+                        Store (Arg0, T_0)
+                        If (LEqual (T_0, One))
                         {
                             Return (One)
                         }
                         Else
                         {
-                            If (LEqual (_T_0, 0x02))
+                            If (LEqual (T_0, 0x02))
                             {
                                 Return (0x02)
                             }
                             Else
                             {
-                                If (LEqual (_T_0, 0x03))
+                                If (LEqual (T_0, 0x03))
                                 {
                                     Return (0x04)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_0, 0x04))
+                                    If (LEqual (T_0, 0x04))
                                     {
                                         Return (0x08)
                                     }
                                     Else
                                     {
-                                        If (LEqual (_T_0, 0x05))
+                                        If (LEqual (T_0, 0x05))
                                         {
                                             Return (0x0100)
                                         }
                                         Else
                                         {
-                                            If (LEqual (_T_0, 0x06))
+                                            If (LEqual (T_0, 0x06))
                                             {
                                                 Return (0x0200)
                                             }
                                             Else
                                             {
-                                                If (LEqual (_T_0, 0x07))
+                                                If (LEqual (T_0, 0x07))
                                                 {
                                                     Return (0x0400)
                                                 }
                                                 Else
                                                 {
-                                                    If (LEqual (_T_0, 0x08))
+                                                    If (LEqual (T_0, 0x08))
                                                     {
                                                         Return (0x0800)
                                                     }
                                                     Else
                                                     {
-                                                        If (LEqual (_T_0, 0x09))
+                                                        If (LEqual (T_0, 0x09))
                                                         {
                                                             Return (0x10)
                                                         }
                                                         Else
                                                         {
-                                                            If (LEqual (_T_0, 0x0A))
+                                                            If (LEqual (T_0, 0x0A))
                                                             {
                                                                 Return (0x20)
                                                             }
                                                             Else
                                                             {
-                                                                If (LEqual (_T_0, 0x0B))
+                                                                If (LEqual (T_0, 0x0B))
                                                                 {
                                                                     Return (0x1000)
                                                                 }
                                                                 Else
                                                                 {
-                                                                    If (LEqual (_T_0, 0x0C))
+                                                                    If (LEqual (T_0, 0x0C))
                                                                     {
                                                                         Return (0x2000)
                                                                     }
                                                                     Else
                                                                     {
-                                                                        If (LEqual (_T_0, 0x0D))
+                                                                        If (LEqual (T_0, 0x0D))
                                                                         {
                                                                             Return (0x40)
                                                                         }
                                                                         Else
                                                                         {
-                                                                            If (LEqual (_T_0, 0x0E))
+                                                                            If (LEqual (T_0, 0x0E))
                                                                             {
                                                                                 Return (0x80)
                                                                             }
                                                                             Else
                                                                             {
-                                                                                If (LEqual (_T_0, 0x0F))
+                                                                                If (LEqual (T_0, 0x0F))
                                                                                 {
                                                                                     Return (0x4000)
                                                                                 }
@@ -9866,56 +9851,56 @@ Store (Zero, P80D)
                 {
                     While (One)
                     {
-                        Store (Arg0, _T_1)
-                        If (LEqual (_T_1, One))
+                        Store (Arg0, T_1)
+                        If (LEqual (T_1, One))
                         {
                             Return (One)
                         }
                         Else
                         {
-                            If (LEqual (_T_1, 0x02))
+                            If (LEqual (T_1, 0x02))
                             {
                                 Return (0x02)
                             }
                             Else
                             {
-                                If (LEqual (_T_1, 0x03))
+                                If (LEqual (T_1, 0x03))
                                 {
                                     Return (0x04)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_1, 0x04))
+                                    If (LEqual (T_1, 0x04))
                                     {
                                         Return (0x08)
                                     }
                                     Else
                                     {
-                                        If (LEqual (_T_1, 0x05))
+                                        If (LEqual (T_1, 0x05))
                                         {
                                             Return (0x10)
                                         }
                                         Else
                                         {
-                                            If (LEqual (_T_1, 0x06))
+                                            If (LEqual (T_1, 0x06))
                                             {
                                                 Return (0x20)
                                             }
                                             Else
                                             {
-                                                If (LEqual (_T_1, 0x07))
+                                                If (LEqual (T_1, 0x07))
                                                 {
                                                     Return (0x40)
                                                 }
                                                 Else
                                                 {
-                                                    If (LEqual (_T_1, 0x08))
+                                                    If (LEqual (T_1, 0x08))
                                                     {
                                                         Return (0x80)
                                                     }
                                                     Else
                                                     {
-                                                        If (LEqual (_T_1, 0x09))
+                                                        If (LEqual (T_1, 0x09))
                                                         {
                                                             Return (0x0100)
                                                         }
@@ -11128,8 +11113,6 @@ Store (Zero, P80D)
                 PMES,   1
             }
             
-            
-
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
                 Return (GPRW (0x6D, 0x04))
@@ -11145,7 +11128,6 @@ Store (Zero, P80D)
                     //"MaximumBootBeepVolume", 77,
                 })
             }
-            
         }
 
         Device (RP01)
@@ -11230,12 +11212,12 @@ Store (Zero, P80D)
             Name (OPTS, Zero)
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
             {
-                Name (_T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                 While (One)
                 {
-                    Store (ToInteger (Arg0), _T_0)
-                    If (LEqual (_T_0, Buffer (0x10)
+                    Store (ToInteger (Arg0), T_0)
+                    If (LEqual (T_0, Buffer (0x10)
                             {
                                 /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
                                 /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
@@ -11243,8 +11225,8 @@ Store (Zero, P80D)
                     {
                         While (One)
                         {
-                            Store (ToInteger (Arg2), _T_1)
-                            If (LEqual (_T_1, Zero))
+                            Store (ToInteger (Arg2), T_1)
+                            If (LEqual (T_1, Zero))
                             {
                                 If (LEqual (Arg1, 0x02))
                                 {
@@ -11268,7 +11250,7 @@ Store (Zero, P80D)
                             }
                             Else
                             {
-                                If (LEqual (_T_1, 0x04))
+                                If (LEqual (T_1, 0x04))
                                 {
                                     If (LEqual (Arg1, 0x02))
                                     {
@@ -11292,7 +11274,7 @@ Store (Zero, P80D)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_1, 0x06))
+                                    If (LEqual (T_1, 0x06))
                                     {
                                         If (LEqual (Arg1, 0x02))
                                         {
@@ -11542,12 +11524,12 @@ Store (Zero, P80D)
             Name (OPTS, Zero)
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
             {
-                Name (_T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                 While (One)
                 {
-                    Store (ToInteger (Arg0), _T_0)
-                    If (LEqual (_T_0, Buffer (0x10)
+                    Store (ToInteger (Arg0), T_0)
+                    If (LEqual (T_0, Buffer (0x10)
                             {
                                 /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
                                 /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
@@ -11555,8 +11537,8 @@ Store (Zero, P80D)
                     {
                         While (One)
                         {
-                            Store (ToInteger (Arg2), _T_1)
-                            If (LEqual (_T_1, Zero))
+                            Store (ToInteger (Arg2), T_1)
+                            If (LEqual (T_1, Zero))
                             {
                                 If (LEqual (Arg1, 0x02))
                                 {
@@ -11580,7 +11562,7 @@ Store (Zero, P80D)
                             }
                             Else
                             {
-                                If (LEqual (_T_1, 0x04))
+                                If (LEqual (T_1, 0x04))
                                 {
                                     If (LEqual (Arg1, 0x02))
                                     {
@@ -11604,7 +11586,7 @@ Store (Zero, P80D)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_1, 0x06))
+                                    If (LEqual (T_1, 0x06))
                                     {
                                         If (LEqual (Arg1, 0x02))
                                         {
@@ -11854,12 +11836,12 @@ Store (Zero, P80D)
             Name (OPTS, Zero)
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
             {
-                Name (_T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                 While (One)
                 {
-                    Store (ToInteger (Arg0), _T_0)
-                    If (LEqual (_T_0, Buffer (0x10)
+                    Store (ToInteger (Arg0), T_0)
+                    If (LEqual (T_0, Buffer (0x10)
                             {
                                 /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
                                 /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
@@ -11867,8 +11849,8 @@ Store (Zero, P80D)
                     {
                         While (One)
                         {
-                            Store (ToInteger (Arg2), _T_1)
-                            If (LEqual (_T_1, Zero))
+                            Store (ToInteger (Arg2), T_1)
+                            If (LEqual (T_1, Zero))
                             {
                                 If (LEqual (Arg1, 0x02))
                                 {
@@ -11892,7 +11874,7 @@ Store (Zero, P80D)
                             }
                             Else
                             {
-                                If (LEqual (_T_1, 0x04))
+                                If (LEqual (T_1, 0x04))
                                 {
                                     If (LEqual (Arg1, 0x02))
                                     {
@@ -11916,7 +11898,7 @@ Store (Zero, P80D)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_1, 0x06))
+                                    If (LEqual (T_1, 0x06))
                                     {
                                         If (LEqual (Arg1, 0x02))
                                         {
@@ -12166,12 +12148,12 @@ Store (Zero, P80D)
             Name (OPTS, Zero)
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
             {
-                Name (_T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                 While (One)
                 {
-                    Store (ToInteger (Arg0), _T_0)
-                    If (LEqual (_T_0, Buffer (0x10)
+                    Store (ToInteger (Arg0), T_0)
+                    If (LEqual (T_0, Buffer (0x10)
                             {
                                 /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
                                 /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
@@ -12179,8 +12161,8 @@ Store (Zero, P80D)
                     {
                         While (One)
                         {
-                            Store (ToInteger (Arg2), _T_1)
-                            If (LEqual (_T_1, Zero))
+                            Store (ToInteger (Arg2), T_1)
+                            If (LEqual (T_1, Zero))
                             {
                                 If (LEqual (Arg1, 0x02))
                                 {
@@ -12204,7 +12186,7 @@ Store (Zero, P80D)
                             }
                             Else
                             {
-                                If (LEqual (_T_1, 0x04))
+                                If (LEqual (T_1, 0x04))
                                 {
                                     If (LEqual (Arg1, 0x02))
                                     {
@@ -12228,7 +12210,7 @@ Store (Zero, P80D)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_1, 0x06))
+                                    If (LEqual (T_1, 0x06))
                                     {
                                         If (LEqual (Arg1, 0x02))
                                         {
@@ -12478,12 +12460,12 @@ Store (Zero, P80D)
             Name (OPTS, Zero)
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
             {
-                Name (_T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                 While (One)
                 {
-                    Store (ToInteger (Arg0), _T_0)
-                    If (LEqual (_T_0, Buffer (0x10)
+                    Store (ToInteger (Arg0), T_0)
+                    If (LEqual (T_0, Buffer (0x10)
                             {
                                 /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
                                 /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
@@ -12491,8 +12473,8 @@ Store (Zero, P80D)
                     {
                         While (One)
                         {
-                            Store (ToInteger (Arg2), _T_1)
-                            If (LEqual (_T_1, Zero))
+                            Store (ToInteger (Arg2), T_1)
+                            If (LEqual (T_1, Zero))
                             {
                                 If (LEqual (Arg1, 0x02))
                                 {
@@ -12516,7 +12498,7 @@ Store (Zero, P80D)
                             }
                             Else
                             {
-                                If (LEqual (_T_1, 0x04))
+                                If (LEqual (T_1, 0x04))
                                 {
                                     If (LEqual (Arg1, 0x02))
                                     {
@@ -12540,7 +12522,7 @@ Store (Zero, P80D)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_1, 0x06))
+                                    If (LEqual (T_1, 0x06))
                                     {
                                         If (LEqual (Arg1, 0x02))
                                         {
@@ -12790,12 +12772,12 @@ Store (Zero, P80D)
             Name (OPTS, Zero)
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
             {
-                Name (_T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                 While (One)
                 {
-                    Store (ToInteger (Arg0), _T_0)
-                    If (LEqual (_T_0, Buffer (0x10)
+                    Store (ToInteger (Arg0), T_0)
+                    If (LEqual (T_0, Buffer (0x10)
                             {
                                 /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
                                 /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
@@ -12803,8 +12785,8 @@ Store (Zero, P80D)
                     {
                         While (One)
                         {
-                            Store (ToInteger (Arg2), _T_1)
-                            If (LEqual (_T_1, Zero))
+                            Store (ToInteger (Arg2), T_1)
+                            If (LEqual (T_1, Zero))
                             {
                                 If (LEqual (Arg1, 0x02))
                                 {
@@ -12828,7 +12810,7 @@ Store (Zero, P80D)
                             }
                             Else
                             {
-                                If (LEqual (_T_1, 0x04))
+                                If (LEqual (T_1, 0x04))
                                 {
                                     If (LEqual (Arg1, 0x02))
                                     {
@@ -12852,7 +12834,7 @@ Store (Zero, P80D)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_1, 0x06))
+                                    If (LEqual (T_1, 0x06))
                                     {
                                         If (LEqual (Arg1, 0x02))
                                         {
@@ -13114,12 +13096,12 @@ Store (Zero, P80D)
             Name (OPTS, Zero)
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
             {
-                Name (_T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                 While (One)
                 {
-                    Store (ToInteger (Arg0), _T_0)
-                    If (LEqual (_T_0, Buffer (0x10)
+                    Store (ToInteger (Arg0), T_0)
+                    If (LEqual (T_0, Buffer (0x10)
                             {
                                 /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
                                 /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
@@ -13127,8 +13109,8 @@ Store (Zero, P80D)
                     {
                         While (One)
                         {
-                            Store (ToInteger (Arg2), _T_1)
-                            If (LEqual (_T_1, Zero))
+                            Store (ToInteger (Arg2), T_1)
+                            If (LEqual (T_1, Zero))
                             {
                                 If (LEqual (Arg1, 0x02))
                                 {
@@ -13152,7 +13134,7 @@ Store (Zero, P80D)
                             }
                             Else
                             {
-                                If (LEqual (_T_1, 0x04))
+                                If (LEqual (T_1, 0x04))
                                 {
                                     If (LEqual (Arg1, 0x02))
                                     {
@@ -13176,7 +13158,7 @@ Store (Zero, P80D)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_1, 0x06))
+                                    If (LEqual (T_1, 0x06))
                                     {
                                         If (LEqual (Arg1, 0x02))
                                         {
@@ -13426,12 +13408,12 @@ Store (Zero, P80D)
             Name (OPTS, Zero)
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
             {
-                Name (_T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                 While (One)
                 {
-                    Store (ToInteger (Arg0), _T_0)
-                    If (LEqual (_T_0, Buffer (0x10)
+                    Store (ToInteger (Arg0), T_0)
+                    If (LEqual (T_0, Buffer (0x10)
                             {
                                 /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
                                 /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
@@ -13439,8 +13421,8 @@ Store (Zero, P80D)
                     {
                         While (One)
                         {
-                            Store (ToInteger (Arg2), _T_1)
-                            If (LEqual (_T_1, Zero))
+                            Store (ToInteger (Arg2), T_1)
+                            If (LEqual (T_1, Zero))
                             {
                                 If (LEqual (Arg1, 0x02))
                                 {
@@ -13464,7 +13446,7 @@ Store (Zero, P80D)
                             }
                             Else
                             {
-                                If (LEqual (_T_1, 0x04))
+                                If (LEqual (T_1, 0x04))
                                 {
                                     If (LEqual (Arg1, 0x02))
                                     {
@@ -13488,7 +13470,7 @@ Store (Zero, P80D)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_1, 0x06))
+                                    If (LEqual (T_1, 0x06))
                                     {
                                         If (LEqual (Arg1, 0x02))
                                         {
@@ -14152,21 +14134,6 @@ Store (Zero, P80D)
                 Or (HCON, 0x02, HCON)
                 Or (HSTS, 0xFF, HSTS)
             }
-            Device (BUS0)
-            {
-                Name (_CID, "smbus")
-                Name (_ADR, Zero)
-                Device (DVL0)
-                {
-                    Name (_ADR, 0x57)
-                    Name (_CID, "diagsvault")
-                    Method (_DSM, 4, NotSerialized)
-                    {
-                        If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-                        Return (Package() { "address", 0x57 })
-                    }
-                }
-            }
         }
     }
 
@@ -14443,8 +14410,6 @@ Store (Zero, P80D)
         {
             Name (_HID, EisaId ("PNP0C0C"))  // _HID: Hardware ID
         }
-
-        
         
         Device (SLPB)
         {
@@ -14606,8 +14571,8 @@ Store (Zero, P80D)
             Name (LFCC, 0x1130)
             Method (UBIF, 0, Serialized)
             {
-                Name (_T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                 If (ECOK)
                 {
                     Acquire (^^PCI0.LPCB.EC0.MUT1, 0xFFFF)
@@ -14628,26 +14593,26 @@ Store (Zero, P80D)
                     Store ("LION", Index (PBIF, 0x0B))
                     While (One)
                     {
-                        Store (Local3, _T_0)
-                        If (LEqual (_T_0, One))
+                        Store (Local3, T_0)
+                        If (LEqual (T_0, One))
                         {
                             Store ("AP13B3K", Index (PBIF, 0x09))
                         }
                         Else
                         {
-                            If (LEqual (_T_0, 0x02))
+                            If (LEqual (T_0, 0x02))
                             {
                                 Store ("AP13B", Index (PBIF, 0x09))
                             }
                             Else
                             {
-                                If (LEqual (_T_0, 0x03))
+                                If (LEqual (T_0, 0x03))
                                 {
                                     Store ("TW932SM", Index (PBIF, 0x09))
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_0, 0x04))
+                                    If (LEqual (T_0, 0x04))
                                     {
                                         Store ("AP13B8K", Index (PBIF, 0x09))
                                     }
@@ -14664,50 +14629,50 @@ Store (Zero, P80D)
 
                     While (One)
                     {
-                        Store (Local4, _T_1)
-                        If (LEqual (_T_1, 0x03))
+                        Store (Local4, T_1)
+                        If (LEqual (T_1, 0x03))
                         {
                             Store ("SANYO", Index (PBIF, 0x0C))
                         }
                         Else
                         {
-                            If (LEqual (_T_1, 0x04))
+                            If (LEqual (T_1, 0x04))
                             {
                                 Store ("SONY", Index (PBIF, 0x0C))
                             }
                             Else
                             {
-                                If (LEqual (_T_1, 0x05))
+                                If (LEqual (T_1, 0x05))
                                 {
                                     Store ("PANASONIC", Index (PBIF, 0x0C))
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_1, 0x06))
+                                    If (LEqual (T_1, 0x06))
                                     {
                                         Store ("SAMSUNG", Index (PBIF, 0x0C))
                                     }
                                     Else
                                     {
-                                        If (LEqual (_T_1, 0x07))
+                                        If (LEqual (T_1, 0x07))
                                         {
                                             Store ("SIMPLO", Index (PBIF, 0x0C))
                                         }
                                         Else
                                         {
-                                            If (LEqual (_T_1, 0x08))
+                                            If (LEqual (T_1, 0x08))
                                             {
                                                 Store ("MOTOROLA", Index (PBIF, 0x0C))
                                             }
                                             Else
                                             {
-                                                If (LEqual (_T_1, 0x09))
+                                                If (LEqual (T_1, 0x09))
                                                 {
                                                     Store ("CELXPERT", Index (PBIF, 0x0C))
                                                 }
                                                 Else
                                                 {
-                                                    If (LEqual (_T_1, 0x0A))
+                                                    If (LEqual (T_1, 0x0A))
                                                     {
                                                         Store ("LGC", Index (PBIF, 0x0C))
                                                     }
@@ -16641,10 +16606,7 @@ Store (Zero, P80D)
             }
 
             Device (DD1F)
-            {
-                //added
-                Name (_HID, EisaId ("LCD1234"))  // _HID: Hardware ID 
-                
+            {                
                 Method (_ADR, 0, Serialized)  // _ADR: Address
                 {
                     If (LEqual (EDPV, Zero))
@@ -18500,7 +18462,6 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
             Ones, 
             0x2C
         })
-        
         Method (_DSM, 4, NotSerialized)
         {
             If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
@@ -18509,29 +18470,25 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                 "AAPL,ig-platform-id", Buffer() { 0x02, 0x00, 0x16, 0x04 },
                 "hda-gfx", Buffer() { "onboard-1" },
             })
+            //Store (And (Arg2, 0xFF), Local0)
+            //If (LEqual (Arg0, Buffer (0x10)
+                    //{
+                        /* 0000 */   //0xF8, 0xD8, 0x86, 0xA4, 0xDA, 0x0B, 0x1B, 0x47,
+                        /* 0008 */   //0xA7, 0x2B, 0x60, 0x42, 0xA6, 0xB5, 0xBE, 0xE0
+                    //}))
+            //{
+                //Return (\_SB.PCI0.RP05.PEGP.NVOP (Arg0, Arg1, Arg2, Arg3))
+            //}
+
+            //If (LEqual (Arg0, Buffer (0x10)
+                    //{
+                        /* 0000 */   //0xA0, 0xA0, 0x95, 0x9D, 0x60, 0x00, 0x48, 0x4D,
+                        /* 0008 */   //0xB3, 0x4D, 0x7E, 0x5F, 0xEA, 0x12, 0x9F, 0xD4
+                    //}))
+            //{
+                //Return (0x80000002)
+            //}
         }
-        
-        //Method (_DSM, 4, Serialized)  
-        //{
-        //    Store (And (Arg2, 0xFF), Local0)
-        //    If (LEqual (Arg0, Buffer (0x10)
-        //            {
-        //                /* 0000 */   0xF8, 0xD8, 0x86, 0xA4, 0xDA, 0x0B, 0x1B, 0x47,
-        //                /* 0008 */   0xA7, 0x2B, 0x60, 0x42, 0xA6, 0xB5, 0xBE, 0xE0
-        //            }))
-        //    {
-        //        Return (\_SB.PCI0.RP05.PEGP.NVOP (Arg0, Arg1, Arg2, Arg3))
-        //    }
-        //
-        //    If (LEqual (Arg0, Buffer (0x10)
-        //            {
-        //                /* 0000 */   0xA0, 0xA0, 0x95, 0x9D, 0x60, 0x00, 0x48, 0x4D,
-        //                /* 0008 */   0xB3, 0x4D, 0x7E, 0x5F, 0xEA, 0x12, 0x9F, 0xD4
-        //            }))
-        //    {
-        //        Return (0x80000002)
-        //    }
-        //}
     }
 
     Name (BDFR, 0x000F804C)
@@ -18561,8 +18518,8 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
         Name (GESC, Zero)
         Method (GPS, 4, Serialized)
         {
-            Name (_T_1, Zero)  // _T_x: Emitted by ASL Compiler
-            Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+            Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
             If (LNotEqual (Arg1, 0x0100))
             {
                 Return (0x80000002)
@@ -18570,8 +18527,8 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
 
             While (One)
             {
-                Store (ToInteger (Arg2), _T_0)
-                If (LEqual (_T_0, Zero))
+                Store (ToInteger (Arg2), T_0)
+                If (LEqual (T_0, Zero))
                 {
                     Return (Buffer (0x08)
                     {
@@ -18580,7 +18537,7 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                 }
                 Else
                 {
-                    If (LEqual (_T_0, 0x13))
+                    If (LEqual (T_0, 0x13))
                     {
                         Store (Buffer (0x04)
                             {
@@ -18593,7 +18550,7 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                     }
                     Else
                     {
-                        If (LEqual (_T_0, 0x20))
+                        If (LEqual (T_0, 0x20))
                         {
                             CreateBitField (Arg3, 0x18, NRIT)
                             CreateBitField (Arg3, 0x19, RITS)
@@ -18632,13 +18589,13 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                         }
                         Else
                         {
-                            If (LEqual (_T_0, 0x21))
+                            If (LEqual (T_0, 0x21))
                             {
                                 Return (\_PR.CPU0._PSS)
                             }
                             Else
                             {
-                                If (LEqual (_T_0, 0x22))
+                                If (LEqual (T_0, 0x22))
                                 {
                                     CreateByteField (Arg3, Zero, NPPC)
                                     Store (NPPC, \_PR.CPU0._PPC)
@@ -18676,13 +18633,13 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_0, 0x23))
+                                    If (LEqual (T_0, 0x23))
                                     {
                                         Return (\_PR.CPU0._PPC)
                                     }
                                     Else
                                     {
-                                        If (LEqual (_T_0, 0x2A))
+                                        If (LEqual (T_0, 0x2A))
                                         {
                                             CreateByteField (Arg3, Zero, QUTP)
                                             CreateBitField (Arg3, 0x08, GPUT)
@@ -18708,8 +18665,8 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                                             Store (0x00010000, VERS)
                                             While (One)
                                             {
-                                                Store (QUTP, _T_1)
-                                                If (LEqual (_T_1, Zero))
+                                                Store (QUTP, T_1)
+                                                If (LEqual (T_1, Zero))
                                                 {
                                                     If (CPUT)
                                                     {
@@ -18722,7 +18679,7 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                                                 }
                                                 Else
                                                 {
-                                                    If (LEqual (_T_1, One))
+                                                    If (LEqual (T_1, One))
                                                     {
                                                         Store (0x0300, STSV)
                                                         Or (STSV, QUTP, STSV)
@@ -18731,7 +18688,7 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                                                     }
                                                     Else
                                                     {
-                                                        If (LEqual (_T_1, 0x02))
+                                                        If (LEqual (T_1, 0x02))
                                                         {
                                                             Store (0x0102, STSV)
                                                             Store (0x5C, TGPU)
@@ -19031,59 +18988,59 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
 
         Method (GETD, 2, Serialized)
         {
-            Name (_T_5, Zero)  // _T_x: Emitted by ASL Compiler
-            Name (_T_4, Zero)  // _T_x: Emitted by ASL Compiler
-            Name (_T_3, Zero)  // _T_x: Emitted by ASL Compiler
-            Name (_T_2, Zero)  // _T_x: Emitted by ASL Compiler
-            Name (_T_1, Zero)  // _T_x: Emitted by ASL Compiler
-            Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+            Name (T_5, Zero)  // _T_x: Emitted by ASL Compiler
+            Name (T_4, Zero)  // _T_x: Emitted by ASL Compiler
+            Name (T_3, Zero)  // _T_x: Emitted by ASL Compiler
+            Name (T_2, Zero)  // _T_x: Emitted by ASL Compiler
+            Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
             VSTS ()
             Or (\_SB.PCI0.RP05.PEGP.MADL, Arg0, \_SB.PCI0.RP05.PEGP.MADL)
             Or (\_SB.PCI0.RP05.PEGP.MSTE, Arg1, \_SB.PCI0.RP05.PEGP.MSTE)
             While (One)
             {
-                Store (ToInteger (\_SB.PCI0.RP05.PEGP.MADL), _T_0)
-                If (LEqual (_T_0, 0x07))
+                Store (ToInteger (\_SB.PCI0.RP05.PEGP.MADL), T_0)
+                If (LEqual (T_0, 0x07))
                 {
                     While (One)
                     {
-                        Store (ToInteger (\_SB.PCI0.RP05.PEGP.MSTE), _T_1)
-                        If (LEqual (_T_1, One))
+                        Store (ToInteger (\_SB.PCI0.RP05.PEGP.MSTE), T_1)
+                        If (LEqual (T_1, One))
                         {
                             Store (One, \_SB.PCI0.RP05.PEGP.CTOI)
                             Store (0x02, \_SB.PCI0.RP05.PEGP.NTOI)
                         }
                         Else
                         {
-                            If (LEqual (_T_1, 0x02))
+                            If (LEqual (T_1, 0x02))
                             {
                                 Store (0x02, \_SB.PCI0.RP05.PEGP.CTOI)
                                 Store (0x03, \_SB.PCI0.RP05.PEGP.NTOI)
                             }
                             Else
                             {
-                                If (LEqual (_T_1, 0x04))
+                                If (LEqual (T_1, 0x04))
                                 {
                                     Store (0x03, \_SB.PCI0.RP05.PEGP.CTOI)
                                     Store (0x04, \_SB.PCI0.RP05.PEGP.NTOI)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_1, 0x03))
+                                    If (LEqual (T_1, 0x03))
                                     {
                                         Store (0x04, \_SB.PCI0.RP05.PEGP.CTOI)
                                         Store (0x05, \_SB.PCI0.RP05.PEGP.NTOI)
                                     }
                                     Else
                                     {
-                                        If (LEqual (_T_1, 0x05))
+                                        If (LEqual (T_1, 0x05))
                                         {
                                             Store (0x05, \_SB.PCI0.RP05.PEGP.CTOI)
                                             Store (0x06, \_SB.PCI0.RP05.PEGP.NTOI)
                                         }
                                         Else
                                         {
-                                            If (LEqual (_T_1, 0x06))
+                                            If (LEqual (T_1, 0x06))
                                             {
                                                 Store (0x06, \_SB.PCI0.RP05.PEGP.CTOI)
                                                 Store (One, \_SB.PCI0.RP05.PEGP.NTOI)
@@ -19104,26 +19061,26 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                 }
                 Else
                 {
-                    If (LEqual (_T_0, 0x06))
+                    If (LEqual (T_0, 0x06))
                     {
                         While (One)
                         {
-                            Store (ToInteger (\_SB.PCI0.RP05.PEGP.MSTE), _T_2)
-                            If (LEqual (_T_2, 0x02))
+                            Store (ToInteger (\_SB.PCI0.RP05.PEGP.MSTE), T_2)
+                            If (LEqual (T_2, 0x02))
                             {
                                 Store (0x02, \_SB.PCI0.RP05.PEGP.CTOI)
                                 Store (0x03, \_SB.PCI0.RP05.PEGP.NTOI)
                             }
                             Else
                             {
-                                If (LEqual (_T_2, 0x04))
+                                If (LEqual (T_2, 0x04))
                                 {
                                     Store (0x03, \_SB.PCI0.RP05.PEGP.CTOI)
                                     Store (0x06, \_SB.PCI0.RP05.PEGP.NTOI)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_2, 0x06))
+                                    If (LEqual (T_2, 0x06))
                                     {
                                         Store (0x06, \_SB.PCI0.RP05.PEGP.CTOI)
                                         Store (0x02, \_SB.PCI0.RP05.PEGP.NTOI)
@@ -19141,26 +19098,26 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                     }
                     Else
                     {
-                        If (LEqual (_T_0, 0x05))
+                        If (LEqual (T_0, 0x05))
                         {
                             While (One)
                             {
-                                Store (ToInteger (\_SB.PCI0.RP05.PEGP.MSTE), _T_3)
-                                If (LEqual (_T_3, One))
+                                Store (ToInteger (\_SB.PCI0.RP05.PEGP.MSTE), T_3)
+                                If (LEqual (T_3, One))
                                 {
                                     Store (One, \_SB.PCI0.RP05.PEGP.CTOI)
                                     Store (0x03, \_SB.PCI0.RP05.PEGP.NTOI)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_3, 0x04))
+                                    If (LEqual (T_3, 0x04))
                                     {
                                         Store (0x03, \_SB.PCI0.RP05.PEGP.CTOI)
                                         Store (0x05, \_SB.PCI0.RP05.PEGP.NTOI)
                                     }
                                     Else
                                     {
-                                        If (LEqual (_T_3, 0x05))
+                                        If (LEqual (T_3, 0x05))
                                         {
                                             Store (0x05, \_SB.PCI0.RP05.PEGP.CTOI)
                                             Store (One, \_SB.PCI0.RP05.PEGP.NTOI)
@@ -19178,26 +19135,26 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                         }
                         Else
                         {
-                            If (LEqual (_T_0, 0x03))
+                            If (LEqual (T_0, 0x03))
                             {
                                 While (One)
                                 {
-                                    Store (ToInteger (\_SB.PCI0.RP05.PEGP.MSTE), _T_4)
-                                    If (LEqual (_T_4, One))
+                                    Store (ToInteger (\_SB.PCI0.RP05.PEGP.MSTE), T_4)
+                                    If (LEqual (T_4, One))
                                     {
                                         Store (One, \_SB.PCI0.RP05.PEGP.CTOI)
                                         Store (0x02, \_SB.PCI0.RP05.PEGP.NTOI)
                                     }
                                     Else
                                     {
-                                        If (LEqual (_T_4, 0x02))
+                                        If (LEqual (T_4, 0x02))
                                         {
                                             Store (0x02, \_SB.PCI0.RP05.PEGP.CTOI)
                                             Store (0x04, \_SB.PCI0.RP05.PEGP.NTOI)
                                         }
                                         Else
                                         {
-                                            If (LEqual (_T_4, 0x03))
+                                            If (LEqual (T_4, 0x03))
                                             {
                                                 Store (0x04, \_SB.PCI0.RP05.PEGP.CTOI)
                                                 Store (One, \_SB.PCI0.RP05.PEGP.NTOI)
@@ -19217,22 +19174,22 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                             {
                                 While (One)
                                 {
-                                    Store (ToInteger (\_SB.PCI0.RP05.PEGP.MSTE), _T_5)
-                                    If (LEqual (_T_5, One))
+                                    Store (ToInteger (\_SB.PCI0.RP05.PEGP.MSTE), T_5)
+                                    If (LEqual (T_5, One))
                                     {
                                         Store (One, \_SB.PCI0.RP05.PEGP.CTOI)
                                         Store (One, \_SB.PCI0.RP05.PEGP.NTOI)
                                     }
                                     Else
                                     {
-                                        If (LEqual (_T_5, 0x02))
+                                        If (LEqual (T_5, 0x02))
                                         {
                                             Store (0x02, \_SB.PCI0.RP05.PEGP.CTOI)
                                             Store (0x02, \_SB.PCI0.RP05.PEGP.NTOI)
                                         }
                                         Else
                                         {
-                                            If (LEqual (_T_5, 0x04))
+                                            If (LEqual (T_5, 0x04))
                                             {
                                                 Store (0x03, \_SB.PCI0.RP05.PEGP.CTOI)
                                                 Store (0x03, \_SB.PCI0.RP05.PEGP.NTOI)
@@ -19253,7 +19210,7 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
 
         Method (NVOP, 4, Serialized)
         {
-            Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
             If (LNotEqual (Arg1, 0x0100))
             {
                 Return (0x80000002)
@@ -19261,8 +19218,8 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
 
             While (One)
             {
-                Store (ToInteger (Arg2), _T_0)
-                If (LEqual (_T_0, Zero))
+                Store (ToInteger (Arg2), T_0)
+                If (LEqual (T_0, Zero))
                 {
                     Store (Buffer (0x04)
                         {
@@ -19272,7 +19229,7 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                 }
                 Else
                 {
-                    If (LEqual (_T_0, 0x05))
+                    If (LEqual (T_0, 0x05))
                     {
                         Name (TMP5, Buffer (0x04)
                         {
@@ -19304,7 +19261,7 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                     }
                     Else
                     {
-                        If (LEqual (_T_0, 0x06))
+                        If (LEqual (T_0, 0x06))
                         {
                             Name (TMP6, Package (0x0F)
                             {
@@ -19337,13 +19294,13 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                         }
                         Else
                         {
-                            If (LEqual (_T_0, 0x10))
+                            If (LEqual (T_0, 0x10))
                             {
                                 Return (\_SB.PCI0.RP05.PEGP.GOBT (Arg3))
                             }
                             Else
                             {
-                                If (LEqual (_T_0, 0x1A))
+                                If (LEqual (T_0, 0x1A))
                                 {
                                     CreateField (Arg3, 0x18, 0x02, OPCE)
                                     CreateField (Arg3, Zero, One, FLCH)
@@ -19378,7 +19335,7 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                                 }
                                 Else
                                 {
-                                    If (LEqual (_T_0, 0x1B))
+                                    If (LEqual (T_0, 0x1B))
                                     {
                                         Store (Arg3, Local0)
                                         CreateField (Local0, Zero, One, OPFL)
@@ -19584,7 +19541,7 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
 
         Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
         {
-            Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
             If (LEqual (Arg0, Buffer (0x10)
                     {
                         /* 0000 */   0x01, 0x2D, 0x13, 0xA3, 0xDA, 0x8C, 0xBA, 0x49,
@@ -19611,8 +19568,8 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
             {
                 While (One)
                 {
-                    Store (ToInteger (Arg2), _T_0)
-                    If (LEqual (_T_0, Zero))
+                    Store (ToInteger (Arg2), T_0)
+                    If (LEqual (T_0, Zero))
                     {
                         Return (Buffer (0x04)
                         {
@@ -19621,13 +19578,13 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                     }
                     Else
                     {
-                        If (LEqual (_T_0, 0x18))
+                        If (LEqual (T_0, 0x18))
                         {
                             Return (Unicode ("0"))
                         }
                         Else
                         {
-                            If (LEqual (_T_0, 0x10))
+                            If (LEqual (T_0, 0x10))
                             {
                                 If (LEqual (Arg1, 0x0300))
                                 {
@@ -20038,7 +19995,7 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
     //end iaoe ssdt-4
     Scope (\_SB)
     {
-        Device (PNLF) //added
+        Device (PNLF)
         {
             // normal PNLF declares (note some of this probably not necessary)
             Name (_ADR, Zero)
@@ -20094,7 +20051,7 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                 // Because this laptop starts at full brightness, I just set it right
                 // here.  This is to insure _BQC and XBQC return the correct level
                 // at startup.
-                Store(0xad90ad9, LEVX)
+                Store(0x02EC02EC, LEVX)
             }
             // _BCM/_BQC: set/get for brightness level
             Method (_BCM, 1, NotSerialized)
@@ -20157,7 +20114,6 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
                 1931, 2002, 2074, 2147,
                 2221, 2296, 2373, 2452,
                 2531, 2612, 2694, 2777,
-
             })
         }
     }

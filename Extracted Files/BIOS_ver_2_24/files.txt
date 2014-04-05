@@ -1,0 +1,10 @@
+Zip includes files extracted from Acer Bios v2.24 and properly decompiled dsl files
+
+DSDT.aml	
+SSDT-2.aml	
+SSDT-3.aml	
+SSDT-4.aml
+DSDT.dsl	
+SSDT-2.dsl	
+SSDT-3.dsl	
+SSDT-4.dsl
