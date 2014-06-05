@@ -18467,7 +18467,7 @@ Field (IGD2, AnyAcc, NoLock, Preserve)
             If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
             Return (Package()
             {
-                "AAPL,ig-platform-id", Buffer() { 0x02, 0x00, 0x16, 0x04 },
+                "AAPL,ig-platform-id", Buffer() { 0x06, 0x00, 0x26, 0x0a },
                 "hda-gfx", Buffer() { "onboard-1" },
             })
             //Store (And (Arg2, 0xFF), Local0)

@@ -17,5 +17,6 @@ What works:
 What doesn't work (for now).....: 
 + Wifi (Intel wifi will never work apparently)
 + HDMI
++ Fn brightness keys
 + Proper shutdown
 + Touchscreen (partially working)

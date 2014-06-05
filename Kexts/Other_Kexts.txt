@@ -1,0 +1,29 @@
+Note to self: I've removed kexts that I know are easily found elsewhere, including:
+
+RehabMan-Battery-2014-0207.zip
+https://github.com/RehabMan/OS-X-ACPI-Battery-Driver
+
+RehabMan-Backlight-2013-1227.zip
+https://github.com/RehabMan/OS-X-ACPI-Backlight
+
+GenericUSBXHCI_1.2.7.tar.gz
+http://sourceforge.net/projects/genericusbxhci/files/
+http://www.insanelymac.com/forum/topic/286860-genericusbxhci-usb-30-driver-for-os-x-with-source/
+Might need -gux_nosleep boot flag
+
+RealtekRTL8111-V1.2.0-development6.zip
+RealtekRTL8111-Binary.zip
+Driver for onboard LAN card
+http://www.insanelymac.com/forum/topic/287161-new-driver-for-realtek-rtl8111/
+
+---
+
+
+Wlan is for the TL-WN725NV2 dongle I have right now. This kext was found somewhere on tonymacx86. A slightly older one is:
+http://www.osx86.net/files/file/3539-tp-link-tl-wn723n-v3-tl-wn725n-v2-usb-wifi/
+Users found issues with dongle causing freezes. Disabling spotlight (process mdworker) might help.
+
+The patched AppleIntelFramebufferAzul is to hopefully correct a small artifact issue with the increased VRAM on the HD4400 (1536 instead of 1024). 
+Related info about editing the file:
+http://pikeralpha.wordpress.com/2013/06/27/appleintelframebufferazul-kext/
+http://www.tonymacx86.com/hp-probook/96186-unified-appleintelframebuffercapri-ivy-probooks.html

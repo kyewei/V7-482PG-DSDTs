@@ -1,0 +1,5 @@
+Read up on patching:
+
+http://www.insanelymac.com/forum/topic/293503-haswell-early-reboot-mavericks-locked-msrs-and-hp-envy-15-j063cl-i7-4700mq/
+
+I'm only going to keep the newest kernel that works on my setup. Current version is 10.9.3. Rename to mach_kernel. This machine only needs the xcpm patch.
