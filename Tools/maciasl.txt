@@ -1,1 +1,0 @@
-To update the iasl inside, replace the iasl5 binary with newer versions. Use iAsl version 5 to decompile your DSDT aml if you want fewer errors (which is good!).

@@ -1,0 +1,7 @@
+* MaciASL http://sourceforge.net/projects/maciasl/
+* Kext Utility http://www.hackintoshosx.com/files/file/3640-kext-utility-for-mavericks/
+* DPCIManager http://sourceforge.net/projects/dpcimanager/
+* Clover Configurator http://www.hackintoshosx.com/files/file/49-clover-configurator/
+* Chameleon Wizard http://www.insanelymac.com/forum/topic/257464-chameleon-wizard-utility-for-chameleon/
+
+Actual binaries were removed.

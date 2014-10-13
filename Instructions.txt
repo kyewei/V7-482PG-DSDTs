@@ -1,0 +1,15 @@
+Instructions for getting to work.
+
+1. Load up your USB with an appropriate OS X installer (Google is your friend).
+2. Patch mach_kernel before running OS X setup. It is located at the root of the USB installer. Use instructions at [1]. This machine only needs the xcpm patch. Mind the OS X version numbers.
+3. Install as usual. Before rebooting, open up console and replace installer-installed kernel with patched kernel from above.
+4. Reboot
+5. Copy over patched DSDT and SSDT into Extra. Copy over org.chameleon.Boot.plist and smbios.plist to Extra also. Install additional Kexts for audio, ethernet, etc as needed. Chameleon Wizard, Kext Utility is useful.
+6. Done
+
+
+
+
+
+
+[1] http://www.insanelymac.com/forum/topic/293503-haswell-early-reboot-mavericks-locked-msrs-and-hp-envy-15-j063cl-i7-4700mq/

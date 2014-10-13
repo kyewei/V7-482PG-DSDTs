@@ -11,19 +11,36 @@ http://sourceforge.net/projects/genericusbxhci/files/
 http://www.insanelymac.com/forum/topic/286860-genericusbxhci-usb-30-driver-for-os-x-with-source/
 Might need -gux_nosleep boot flag
 
-RealtekRTL8111-V1.2.0-development6.zip
-RealtekRTL8111-Binary.zip
-Driver for onboard LAN card
+Driver for RTL8111 Ethernet, onboard LAN card
 http://www.insanelymac.com/forum/topic/287161-new-driver-for-realtek-rtl8111/
+
+
+Local Time Toggle.pkg
+http://www.hackintoshosx.com/files/file/2363-localtime-toggle/
+It packages the script explained below. I don't like how on every boot, the system loses a few seconds of time, so I use UTC and removed the script.
+http://wiki.osx86project.org/wiki/index.php/Tips_And_Tricks#Use_Localtime_instead_of_Universal_for_RTC
 
 ---
 
 
-Wlan is for the TL-WN725NV2 dongle I have right now. This kext was found somewhere on tonymacx86. A slightly older one is:
+Wlan is for the TL-WN725NV2 dongle I have right now. This kext was found somewhere on tonymacx86. 
+Update: I found it.
+http://www.tonymacx86.com/network/120557-dwa-125-rev-d1-rtl8188etv.html#post772464
+A slightly older one is:
 http://www.osx86.net/files/file/3539-tp-link-tl-wn723n-v3-tl-wn725n-v2-usb-wifi/
 Users found issues with dongle causing freezes. Disabling spotlight (process mdworker) might help.
 
-The patched AppleIntelFramebufferAzul is to hopefully correct a small artifact issue with the increased VRAM on the HD4400 (1536 instead of 1024). 
+
+-----
+
+Patch the AppleIntelFramebufferAzul.kext to correct a small artifact issue with the increased VRAM on the HD4400 (1536 instead of 1024). 
 Related info about editing the file:
 http://pikeralpha.wordpress.com/2013/06/27/appleintelframebufferazul-kext/
 http://www.tonymacx86.com/hp-probook/96186-unified-appleintelframebuffercapri-ivy-probooks.html
+
+Update: 
+He made a fancy script for this. The injected platform-id is 0x0a260006 (11)
+Downgrade frame buffer memory to 16 MB, and VRAM to 1024. Rebuild caches and reboot.
+https://github.com/Piker-Alpha/AppleIntelFramebufferAzul.sh
+
+Alternatively, changing a user said changing Color settings to sRGB fixed it also.

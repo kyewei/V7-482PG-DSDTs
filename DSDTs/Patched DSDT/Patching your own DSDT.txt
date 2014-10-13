@@ -1,0 +1,11 @@
+Update: I removed the iasl binary.
+
+On OS X, MaciASL is the tool to edit dsdts. It is a wrapper for the program iasl. It is downloadable elsewhere. To update the iasl inside, replace the iasl5 binary with newer versions. Use iAsl version 5 to decompile your DSDT aml if you want fewer errors (which is good!).
+
+If you want to compile the latest version yourself (later versions might give better decompiling abilities...), download the latest UNIX source from https://acpica.org/, extract it, and do the following before compiling using make.
+
+Go to generate/unix, remove the line that contains “-Woverride-init” inside Makefile.config, and execute “make iasl HOST=_APPLE”
+
+Also use flags shown below:
+Credits for instructions from: http://sourceforge.net/p/maciasl/wiki/Compiling%20iASL/ and http://www.projectosx.com/forum/index.php?s=&showtopic=386&view=findpost&p=39919
+

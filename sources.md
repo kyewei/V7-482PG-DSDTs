@@ -37,3 +37,4 @@ Zenith432
 Piker-Alpha
 
 + SSDT generation script (ssdtPRGen.sh)
++ [Patching AppleIntelFramebufferAzul.sh](https://github.com/Piker-Alpha/AppleIntelFramebufferAzul.sh)
