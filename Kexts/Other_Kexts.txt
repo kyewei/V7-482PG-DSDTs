@@ -1,15 +1,22 @@
 Note to self: I've removed kexts that I know are easily found elsewhere, including:
 
-RehabMan-Battery-2014-0207.zip
+RehabMan-Battery-2015-0123.zip
 https://github.com/RehabMan/OS-X-ACPI-Battery-Driver
 
-RehabMan-Backlight-2013-1227.zip
+RehabMan-Backlight-2015-0715.zip
 https://github.com/RehabMan/OS-X-ACPI-Backlight
 
-GenericUSBXHCI_1.2.7.tar.gz
-http://sourceforge.net/projects/genericusbxhci/files/
+RehabMan-Generic-USB3-2014-1016.zip
+https://github.com/RehabMan/OS-X-Generic-USB3
 http://www.insanelymac.com/forum/topic/286860-genericusbxhci-usb-30-driver-for-os-x-with-source/
-Might need -gux_nosleep boot flag
+Might need -gux_nosleep or -gux_defer_usb2 boot flag
+
+RehabMan-FakePCIID-2015-0703.zip
+https://github.com/RehabMan/OS-X-Fake-PCI-ID
+On Yosemite, the IntelHD4k kexts also check for other values in DSDT, so this is needed in addition to the DSDT edits.
+
+RehabMan-Voodoo-2015-0502.zip
+https://github.com/RehabMan/OS-X-Voodoo-PS2-Controller
 
 Driver for RTL8111 Ethernet, onboard LAN card
 http://www.insanelymac.com/forum/topic/287161-new-driver-for-realtek-rtl8111/
@@ -33,7 +40,7 @@ Users found issues with dongle causing freezes. Disabling spotlight (process mdw
 
 -----
 
-Patch the AppleIntelFramebufferAzul.kext to correct a small artifact issue with the increased VRAM on the HD4400 (1536 instead of 1024). 
+Patch the AppleIntelFramebufferAzul.kext to correct a small artifact issue with the increased VRAM on the HD4400 (1536 instead of 1024). Alternatively, on Yosemite, making cursor memory to 9MB solves problem.
 Related info about editing the file:
 http://pikeralpha.wordpress.com/2013/06/27/appleintelframebufferazul-kext/
 http://www.tonymacx86.com/hp-probook/96186-unified-appleintelframebuffercapri-ivy-probooks.html

@@ -8,6 +8,8 @@ RehabMan:
 + ACPIBacklight
 + Patched kernel code for xcpm
 + VoodooPS2Controller
++ Updated GenericUSBXHCI USB3.0 driver 
++ OS X Fake PCI ID kext
 + [RehabMan's Laptop Repo](https://github.com/RehabMan/Laptop-DSDT-Patch)
 
 
@@ -33,6 +35,7 @@ Zenith432
 
 + GenericUSBXHCI USB3.0 driver 
 + [Link to post](http://www.insanelymac.com/forum/topic/286860-genericusbxhci-usb-30-driver-for-osx-with-source/)
++ [More recent branch](https://github.com/RehabMan/OS-X-Generic-USB3)
 
 Piker-Alpha
 

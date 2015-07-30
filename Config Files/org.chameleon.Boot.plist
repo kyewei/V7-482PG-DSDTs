@@ -8,6 +8,8 @@
 	<string>Yes</string>
 	<key>EthernetBuiltIn</key>
 	<string>Yes</string>
+	<key>UseMemDetect</key>
+	<string>No</string>
 	<key>Graphics Mode</key>
 	<string>1920x1080x32</string>
 	<key>GraphicsEnabler</key>
@@ -19,9 +21,9 @@
 	<key>HDEFLayoutID</key>
 	<string>1</string>
 	<key>Kernel</key>
-	<string>mach_kernel</string>
+	<string>kernel</string>
 	<key>Kernel Flags</key>
-	<string>dart=0 darkwake=0</string>
+	<string>kext-dev-mode=1 darkwake=0 dart=0 -gux_defer_usb2 </string>
 	<key>Timeout</key>
 	<string>5</string>
 	<key>UseKernelCache</key>

@@ -13,10 +13,9 @@ What works:
 + Efi boot (partially works, seems to have less battery life though, so using legacy chameleon for now)
 + USB Sleep/Wake (works with GenericUSBXHCI, given up on trying to DSDT patch since that just refuses to work)
 + Everything else other than below
++ Touchscreen (use either https://github.com/kyewei/osxhidtouch or if on Yosemite, works OOB)
 
 What doesn't work (for now).....: 
 + Wifi (Intel wifi will never work apparently)
-+ HDMI
++ HDMI (didn't test)
 + Fn brightness keys (Fn keys are not recognized, bind to something else)
-+ Proper shutdown
-+ Touchscreen (partially working)

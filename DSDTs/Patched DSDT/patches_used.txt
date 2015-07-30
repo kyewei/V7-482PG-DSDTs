@@ -1,13 +1,19 @@
-GFX0 to IGPU
-DTGP method
-irq fix
-NVIDIA disable
+Audio:
 B0D3 to HDAU
 HDAU string fix
-graphics id inject
-haswell acpibacklight patch, fix value 0x02ec02ec
 hdau inject
 hdef inject
+
+Graphics:
+GFX0 to IGPU
+graphics id inject (HD4600 yosemite)
+NVIDIA disable
+haswell acpibacklight patch
+
+Others:
+DTGP method
+irq fix
+
 
 no effect: 
 -fix mutex0
